@@ -1,0 +1,72 @@
+/* Login Page Styles */
+.login-body {
+    background-color: #f4f7fe;
+    background-image: linear-gradient(180deg, #ffffff 0%, #edf2fa 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-header {
+    background-color: #092c9f; 
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px !important;
+}
+
+.login-icon-wrapper {
+    width: 72px; 
+    height: 72px;
+    background-color: #ebf0fc;
+    color: #092c9f;
+    font-size: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-title {
+    color: #112240;
+}
+
+.login-input-group .form-control,
+.login-input-group .input-group-text {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-color: #e2e8f0;
+}
+
+.login-input-group .form-control:focus {
+    box-shadow: none;
+}
+
+.login-input-group:focus-within .form-control,
+.login-input-group:focus-within .input-group-text {
+    border-color: #092c9f;
+}
+
+.login-submit-btn {
+    background-color: #092c9f;
+    color: white;
+    border-radius: 6px;
+}
+
+.login-submit-btn:hover {
+    background-color: #072280;
+    color: white;
+}
+
+.google-btn {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.google-btn:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}

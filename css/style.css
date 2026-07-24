@@ -7,6 +7,7 @@ html {
     background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
+    overflow-x: hidden;
 }
 
 /* Navbar */
@@ -42,58 +43,7 @@ html {
     background-color: #1545b3;
 }
 
-/* Hero Section */
-.hero-section {
-    margin-top: 74px;
-    height: 650px;
-}
 
-.hero-overlay {
-    background-color: rgba(0, 0, 0, 0.35);
-}
-
-.hero-fade {
-    height: 100px;
-}
-
-.hero-content {
-    margin-top: -80px;
-}
-
-.hero-subtitle {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.search-form-container {
-    max-width: 950px;
-}
-
-.custom-input {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 14px;
-    color: #333;
-}
-
-.custom-input:focus {
-    border-color: #1c56d8;
-}
-
-.search-btn {
-    background-color: #1c56d8;
-    border: 1px solid #1c56d8;
-    border-radius: 5px;
-    padding: 10px 0;
-    font-size: 16px;
-    height: 44px;
-    color: white;
-}
-
-.search-btn:hover {
-    background-color: #1545b3;
-}
 
 /* Footer */
 .footer-custom {
@@ -209,89 +159,5 @@ html {
         position: absolute;
         width: 90%;
     }
-}
-
-@media (max-width: 768px) {
-    .hero-section {
-        height: auto;
-        padding: 60px 0 100px 0;
-    }
-
-    .hero-content {
-        margin-top: 0;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .search-btn {
-        margin-top: 15px;
-    }
-}
-
-/* Sign Up Page Styles */
-.signup-body {
-    background-color: #fafbfc;
-    background-image: none;
-}
-
-.signup-header {
-    background-color: #0b1d42; 
-}
-
-.step-indicator {
-    width: 30px;
-    height: 6px;
-    background-color: #e2e8f0;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.step-indicator.active {
-    background-color: #1c56d8;
-}
-
-.signup-card {
-    border-radius: 20px !important;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    border: 2px solid transparent !important;
-}
-
-.signup-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08) !important;
-}
-
-.signup-card.selected-card {
-    border: 2px solid #1c56d8 !important;
-    box-shadow: 0 15px 30px rgba(28, 86, 216, 0.15) !important;
-}
-
-.icon-wrapper {
-    width: 110px; 
-    height: 110px;
-    background-color: #eef2ff;
-    color: #1c56d8;
-    font-size: 45px;
-    transition: all 0.3s ease;
-}
-
-.signup-card:hover .icon-wrapper, .signup-card.selected-card .icon-wrapper {
-    background-color: #1c56d8;
-    color: white;
-}
-
-.signup-role-btn {
-    background-color: #0d3eb8; 
-    color: white;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.signup-role-btn:hover, .signup-card.selected-card .signup-role-btn {
-    background-color: #092c85;
-    color: white;
 }
 

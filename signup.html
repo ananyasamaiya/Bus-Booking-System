@@ -6,64 +6,381 @@
     <title>Sign Up - GoBus</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/signup.css">
 </head>
 <body class="signup-body">
 
     <!-- Header -->
     <header class="signup-header d-flex align-items-center px-4 py-3">
         <a href="index.html" class="text-decoration-none d-flex align-items-center">
-            <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg"
-                 alt="Logo" style="height: 44px; margin-right: 15px; border-radius: 50%;">
-            <div class="text-white">
-                <div class="fw-bold fs-5 lh-1">GoBus</div>
+            <div class="d-flex align-items-center justify-content-center border border-2 border-white rounded-circle" style="width: 40px; height: 40px; margin-right: 12px;">
+                <i class="fa-solid fa-bus text-white fs-5"></i>
             </div>
+            <div class="text-white fw-bold fs-4">GoBus</div>
         </a>
     </header>
 
     <!-- Main Content -->
     <main class="container py-5 mt-4">
-        <div class="text-center mb-5">
-            <h1 class="fw-bold text-dark" style="color: #112240 !important;">Create Your Account</h1>
-            <p class="text-secondary fs-5 mt-3">Choose how you want to register with GoBus</p>
+        <div class="text-center mb-5 mt-4">
+            <h1 class="fw-bold" style="color: #112240;">Create Your Account</h1>
+            <p class="text-secondary mt-3 mb-4">Choose how you want to register with GoBus</p>
         </div>
 
         <div class="row justify-content-center g-4 mx-auto" style="max-width: 900px;">
             <!-- Traveler Card -->
-            <div class="col-md-6">
-                <div class="card signup-card h-100 border-0 shadow-sm text-center p-5" >
-                    <div class="icon-wrapper mx-auto mb-4 rounded-circle d-flex align-items-center justify-content-center">
+            <div class="col-md-5">
+                <div class="card signup-card h-100 border-0 shadow text-center p-5 rounded-4" >
+                    <div class="icon-wrapper mx-auto mb-4 rounded-circle d-flex align-items-center justify-content-center" style="background-color: #ebf0fc; color: #0d3eb8; width: 100px; height: 100px; font-size: 40px;">
                         <i class="fa-regular fa-user"></i>
                     </div>
                     <h3 class="fw-bold mb-3" style="color: #112240;">Traveler</h3>
-                    <p class="text-secondary mb-5 px-3">Book tickets, explore routes and enjoy your journey.</p>
-                    <button class="btn signup-role-btn w-100 py-3 fw-bold d-flex align-items-center justify-content-center gap-2 mt-auto">
+                    <p class="text-secondary mb-5 px-3">Book tickets, explore routes<br>and enjoy your journey.</p>
+                    <button class="btn signup-role-btn w-100 py-3 fw-semibold d-flex align-items-center justify-content-center gap-2 mt-auto" data-bs-toggle="modal" data-bs-target="#travelerSignupModal">
                         Continue as Traveler
                     </button>
                 </div>
             </div>
             
             <!-- Operator Card -->
-            <div class="col-md-6">
-                <div class="card signup-card h-100 border-0 shadow-sm text-center p-5">
-                    <div class="icon-wrapper mx-auto mb-4 rounded-circle d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-bus-simple"></i>
+            <div class="col-md-5">
+                <div class="card signup-card h-100 border-0 shadow text-center p-5 rounded-4">
+                    <div class="icon-wrapper mx-auto mb-4 rounded-circle d-flex align-items-center justify-content-center" style="background-color: #ebf0fc; color: #0d3eb8; width: 100px; height: 100px; font-size: 40px;">
+                        <i class="fa-solid fa-bus"></i>
                     </div>
                     <h3 class="fw-bold mb-3" style="color: #112240;">Operator</h3>
-                    <p class="text-secondary mb-5 px-3">Manage your buses, schedules and grow your business.</p>
-                    <button class="btn signup-role-btn w-100 py-3 fw-bold d-flex align-items-center justify-content-center gap-2 mt-auto">
+                    <p class="text-secondary mb-5 px-3">Manage your buses, schedules<br>and grow your business.</p>
+                    <button class="btn signup-role-btn w-100 py-3 fw-semibold d-flex align-items-center justify-content-center gap-2 mt-auto" data-bs-toggle="modal" data-bs-target="#operatorSignupModal">
                         Continue as Operator
                     </button>
                 </div>
             </div>
         </div>
         
-        <div class="text-center mt-5">
-            <p class="text-secondary fs-6">Already have an account? <a href="login.html" class="fw-bold text-decoration-none" style="color: #1c56d8;">Sign In</a></p>
+        <!-- Traveler Signup Modal -->
+        <div class="modal fade" id="travelerSignupModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" style="max-width: 450px;">
+                <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+                    <div class="modal-body p-4 position-relative">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                        
+                        <!-- Header -->
+                        <div class="text-center mb-3">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; margin-right: 12px; background-color: #0d3eb8;">
+                                <i class="fa-solid fa-bus text-white fs-5"></i>
+                            </div>
+                            <span class="fw-bold fs-4 align-middle" style="color: #0d3eb8;">GoBus</span>
+                        </div>
+
+                        <!-- Stepper -->
+                        <div class="d-flex justify-content-center align-items-center mb-2 position-relative stepper-container mx-auto" style="max-width: 250px;">
+                            <div class="stepper-line position-absolute top-50 start-0 end-0 translate-middle-y z-0" style="height: 2px; background-color: #e2e8f0;"></div>
+                            <div class="stepper-line-active position-absolute top-50 start-0 translate-middle-y z-0" id="stepperLineActive" style="height: 2px; background-color: #0d3eb8; width: 0%; transition: width 0.3s ease;"></div>
+                            
+                            <div class="d-flex justify-content-between w-100 position-relative z-1">
+                                <div class="step-circle active d-flex align-items-center justify-content-center rounded-circle" id="stepCircle1">1</div>
+                                <div class="step-circle d-flex align-items-center justify-content-center rounded-circle" id="stepCircle2">2</div>
+                                <div class="step-circle d-flex align-items-center justify-content-center rounded-circle" id="stepCircle3">3</div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-3">
+                            <small class="text-primary fw-semibold" id="stepIndicatorText" style="color: #0d3eb8 !important;">Step 1 of 3</small>
+                        </div>
+
+                        <!-- Step 1: Create Account -->
+                        <div id="modalStep1">
+                            <h4 class="fw-bold text-center mb-1" style="color: #112240;">Create Your Account</h4>
+                            <p class="text-secondary text-center mb-3" style="font-size: 14px;">Let's get you started with GoBus</p>
+                            
+                            <form id="formStep1">
+                                <div class="mb-2">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Full Name</label>
+                                    <div class="input-group signup-input-group">
+                                        <input type="text" class="form-control border-start-0 ps-2" placeholder="Enter your full name" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-2">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Email</label>
+                                    <div class="input-group signup-input-group">
+                                        <input type="email" class="form-control border-start-0 ps-2" placeholder="Enter your email address" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-2">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Phone</label>
+                                    <div class="input-group signup-input-group">
+                                        <input type="tel" class="form-control border-start-0 ps-2" placeholder="Enter your phone number" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Password</label>
+                                    <div class="input-group signup-input-group">
+                                        <input type="password" id="signupPassword" class="form-control border-start-0 border-end-0 ps-2" placeholder="Create a password" required>
+                                        <span class="input-group-text bg-white border-start-0 text-muted pe-3" id="toggleSignupPassword" style="cursor: pointer;"><i class="fa-regular fa-eye" id="toggleSignupPasswordIcon"></i></span>
+                                    </div>
+                                </div>
+                                
+                                <button type="button" class="btn w-100 py-2 mb-2 text-white fw-semibold" style="background-color: #0d3eb8; border-radius: 6px;" onclick="goToStep(2)">
+                                    Create Account & Verify
+                                </button>
+                                
+                                <div class="text-center">
+                                    <span class="text-secondary small">Already have an account? </span><a href="login.html" class="fw-semibold text-decoration-none small" style="color: #0d3eb8;">Sign In</a>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Step 2: Verify Email -->
+                        <div id="modalStep2" class="d-none text-center">
+                            <h4 class="fw-bold mb-2" style="color: #112240;">Verify Your Email</h4>
+                            <p class="text-secondary mb-4" style="font-size: 14px;">Enter the 6-digit code sent to<br><span class="fw-semibold" style="color: #0d3eb8;">ananya.samaiya@gmail.com</span></p>
+                            
+                            <div class="d-flex justify-content-between mb-4 otp-container px-2">
+                                <input type="text" class="form-control text-center otp-input" maxlength="1">
+                                <input type="text" class="form-control text-center otp-input" maxlength="1">
+                                <input type="text" class="form-control text-center otp-input" maxlength="1">
+                                <input type="text" class="form-control text-center otp-input" maxlength="1">
+                                <input type="text" class="form-control text-center otp-input" maxlength="1">
+                                <input type="text" class="form-control text-center otp-input" maxlength="1">
+                            </div>
+
+                            <p class="text-secondary small mb-4 pb-2">Didn't receive the code?<br><a href="#" class="fw-semibold text-decoration-none" style="color: #0d3eb8;">Resend code</a> in 00:45</p>
+
+                            <button type="button" class="btn w-100 py-2 mb-3 text-white fw-semibold" style="background-color: #0d3eb8; border-radius: 6px;" onclick="goToStep(3)">
+                                Verify Email
+                            </button>
+                            
+                            <button type="button" class="btn w-100 py-2 bg-white fw-semibold" style="border: 1px solid #0d3eb8; color: #0d3eb8; border-radius: 6px;" onclick="goToStep(1)">
+                                <i class="fa-solid fa-arrow-left me-2"></i> Back
+                            </button>
+                        </div>
+
+                        <!-- Step 3: Verify Phone -->
+                        <div id="modalStep3" class="d-none text-center">
+                            <h4 class="fw-bold mb-2" style="color: #112240;">Verify Your Phone</h4>
+                            <p class="text-secondary mb-4" style="font-size: 14px;">Enter the 6-digit code sent to<br><span class="fw-semibold" style="color: #0d3eb8;">+91 98765 43210</span></p>
+                            
+                            <div class="d-flex justify-content-between mb-4 otp-container px-2">
+                                <input type="text" class="form-control text-center otp-input" maxlength="1">
+                                <input type="text" class="form-control text-center otp-input" maxlength="1">
+                                <input type="text" class="form-control text-center otp-input" maxlength="1">
+                                <input type="text" class="form-control text-center otp-input" maxlength="1">
+                                <input type="text" class="form-control text-center otp-input" maxlength="1">
+                                <input type="text" class="form-control text-center otp-input" maxlength="1">
+                            </div>
+
+                            <p class="text-secondary small mb-4 pb-2">Didn't receive the code?<br><a href="#" class="fw-semibold text-decoration-none" style="color: #0d3eb8;">Resend code</a> in 00:45</p>
+                            
+                            <button type="button" class="btn w-100 py-2 mb-3 text-white fw-semibold" style="background-color: #0d3eb8; border-radius: 6px;" data-bs-dismiss="modal">
+                                Verify & Complete
+                            </button>
+                            
+                            <button type="button" class="btn w-100 py-2 bg-white fw-semibold" style="border: 1px solid #0d3eb8; color: #0d3eb8; border-radius: 6px;" onclick="goToStep(2)">
+                                <i class="fa-solid fa-arrow-left me-2"></i> Back
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
+        
+        <!-- Operator Signup Modal -->
+        <div class="modal fade" id="operatorSignupModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" style="max-width: 450px;">
+                <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+                    <div class="modal-body p-4 position-relative">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                        
+                        <!-- Header -->
+                        <div class="text-center mb-3">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; margin-right: 12px; background-color: #0d3eb8;">
+                                <i class="fa-solid fa-bus text-white fs-5"></i>
+                            </div>
+                            <span class="fw-bold fs-4 align-middle" style="color: #0d3eb8;">GoBus</span>
+                        </div>
+
+                        <!-- Stepper -->
+                        <div class="d-flex justify-content-center align-items-center mb-2 position-relative stepper-container mx-auto" style="max-width: 250px;">
+                            <div class="stepper-line position-absolute top-50 start-0 end-0 translate-middle-y z-0" style="height: 2px; background-color: #e2e8f0;"></div>
+                            <div class="stepper-line-active position-absolute top-50 start-0 translate-middle-y z-0" id="opStepperLineActive" style="height: 2px; background-color: #0d3eb8; width: 0%; transition: width 0.3s ease;"></div>
+                            
+                            <div class="d-flex justify-content-between w-100 position-relative z-1">
+                                <div class="step-circle active d-flex align-items-center justify-content-center rounded-circle" id="opStepCircle1">1</div>
+                                <div class="step-circle d-flex align-items-center justify-content-center rounded-circle" id="opStepCircle2">2</div>
+                                <div class="step-circle d-flex align-items-center justify-content-center rounded-circle" id="opStepCircle3">3</div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-3">
+                            <small class="text-primary fw-semibold" id="opStepIndicatorText" style="color: #0d3eb8 !important;">Step 1 of 3</small>
+                        </div>
+
+                        <!-- Step 1: Identity & Credentials -->
+                        <div id="opModalStep1">
+                            <h4 class="fw-bold text-center mb-1" style="color: #112240;">Identity & Credentials</h4>
+                            <p class="text-secondary text-center mb-3" style="font-size: 14px;">This will be the primary account owner.</p>
+                            
+                            <form id="opFormStep1">
+                                <div class="mb-2">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Full Name (Owner) <span class="text-danger">*</span></label>
+                                    <div class="input-group signup-input-group">
+                                        <input type="text" class="form-control ps-3" placeholder="Enter full name" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-2">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Official Email <span class="text-danger">*</span></label>
+                                    <div class="input-group signup-input-group">
+                                        <input type="email" class="form-control ps-3" placeholder="Enter official email" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-2">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Phone Number <span class="text-danger">*</span></label>
+                                    <div class="input-group signup-input-group">
+                                        <span class="input-group-text bg-white text-dark ps-3 fw-semibold">+91</span>
+                                        <input type="tel" class="form-control ps-2" placeholder="Enter phone number" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Password <span class="text-danger">*</span></label>
+                                    <div class="input-group signup-input-group">
+                                        <input type="password" id="operatorPassword" class="form-control border-end-0 ps-3" placeholder="Create a strong password" required>
+                                        <span class="input-group-text bg-white border-start-0 text-muted pe-3" id="toggleOperatorPassword" style="cursor: pointer;"><i class="fa-regular fa-eye" id="toggleOperatorPasswordIcon"></i></span>
+                                    </div>
+                                </div>
+                                
+                                <button type="button" class="btn w-100 py-2 mb-2 text-white fw-semibold" style="background-color: #0d3eb8; border-radius: 6px;" onclick="goToOperatorStep(2)">
+                                    Create Account & Send Verification Email
+                                </button>
+                                
+                                <div class="text-center">
+                                    <span class="text-secondary small">Your information is secure and encrypted</span>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Step 2: Business Profile -->
+                        <div id="opModalStep2" class="d-none">
+                            <h4 class="fw-bold text-center mb-1" style="color: #112240;">Business Profile</h4>
+                            <p class="text-secondary text-center mb-3" style="font-size: 14px;">Tell us about your fleet and operations.</p>
+                            
+                            <form id="opFormStep2">
+                                <div class="mb-2">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Company Name <span class="text-danger">*</span></label>
+                                    <div class="input-group signup-input-group">
+                                        <input type="text" class="form-control ps-3" placeholder="Enter your company name" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-2">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Head Office Address <span class="text-danger">*</span></label>
+                                    <div class="input-group signup-input-group">
+                                        <textarea class="form-control ps-3" rows="2" placeholder="Enter complete head office address" required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="mb-2">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Base City <span class="text-danger">*</span></label>
+                                    <select class="form-select signup-input-group ps-3 text-muted border" style="border-color: #e2e8f0; font-size: 0.9rem;" required>
+                                        <option selected disabled>Select your base city</option>
+                                        <option value="Mumbai">Mumbai</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="Bangalore">Bangalore</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Company Description <span class="text-danger">*</span></label>
+                                    <div class="input-group signup-input-group">
+                                        <textarea class="form-control ps-3" rows="3" placeholder="Tell us about your bus services, experience, coverage areas, etc." required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn py-2 bg-white fw-semibold w-50" style="border: 1px solid #e2e8f0; color: #112240; border-radius: 6px;" onclick="goToOperatorStep(1)">
+                                        <i class="fa-solid fa-arrow-left me-2"></i> Back
+                                    </button>
+                                    <button type="button" class="btn py-2 text-white fw-semibold w-50" style="background-color: #0d3eb8; border-radius: 6px;" onclick="goToOperatorStep(3)">
+                                        Save & Continue
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Step 3: Legal & Pricing -->
+                        <div id="opModalStep3" class="d-none">
+                            <h4 class="fw-bold text-center mb-1" style="color: #112240;">Legal & Pricing</h4>
+                            <p class="text-secondary text-center mb-3" style="font-size: 14px;">Upload documents and set base pricing.</p>
+                            
+                            <form id="opFormStep3">
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Business License / Permit <span class="text-danger">*</span></label>
+                                    <div class="p-3 text-center border rounded bg-light" style="border-style: dashed !important; border-color: #cbd5e1 !important;">
+                                        <label for="licenseUpload" class="btn btn-outline-primary btn-sm px-3 py-1 mb-1 bg-white fw-semibold" style="border-color: #e2e8f0; color: #0d3eb8;"><i class="fa-solid fa-upload me-1"></i> Upload Document</label>
+                                        <input type="file" id="licenseUpload" class="d-none" accept=".pdf,.jpg,.png">
+                                        <div class="small text-muted" style="font-size: 11px;">Supported formats: PDF, JPG, PNG (Max 5MB)</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Company Banner (Optional)</label>
+                                    <div class="p-3 text-center border rounded bg-light" style="border-style: dashed !important; border-color: #cbd5e1 !important;">
+                                        <label for="bannerUpload" class="btn btn-outline-primary btn-sm px-3 py-1 mb-1 bg-white fw-semibold" style="border-color: #e2e8f0; color: #0d3eb8;"><i class="fa-solid fa-upload me-1"></i> Upload Image</label>
+                                        <input type="file" id="bannerUpload" class="d-none" accept=".jpg,.png">
+                                        <div class="small text-muted" style="font-size: 11px;">Recommended size: 1200x400px (Max 5MB)</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label fw-semibold mb-1" style="font-size: 13px; color: #112240;">Base Pricing (Rate per KM)</label>
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <div class="input-group signup-input-group">
+                                                <span class="input-group-text bg-white text-muted ps-2 pe-1">₹</span>
+                                                <input type="number" class="form-control px-2 border-start-0 border-end-0" placeholder="0.00" required>
+                                                <span class="input-group-text bg-light text-muted px-2" style="font-size: 12px;">Per KM</span>
+                                            </div>
+                                            <div class="small text-muted mt-1" style="font-size: 11px;">Seater Base Price</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="input-group signup-input-group">
+                                                <span class="input-group-text bg-white text-muted ps-2 pe-1">₹</span>
+                                                <input type="number" class="form-control px-2 border-start-0 border-end-0" placeholder="0.00" required>
+                                                <span class="input-group-text bg-light text-muted px-2" style="font-size: 12px;">Per KM</span>
+                                            </div>
+                                            <div class="small text-muted mt-1" style="font-size: 11px;">Sleeper Base Price</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn py-2 bg-white fw-semibold w-50" style="border: 1px solid #e2e8f0; color: #112240; border-radius: 6px;" onclick="goToOperatorStep(2)">
+                                        <i class="fa-solid fa-arrow-left me-2"></i> Back
+                                    </button>
+                                    <button type="submit" class="btn py-2 text-white fw-semibold w-50" style="background-color: #0f8b44; border-radius: 6px;" data-bs-dismiss="modal">
+                                        <i class="fa-solid fa-paper-plane me-1"></i> Submit Application
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <p class="text-secondary fs-6">Already have an account? <a href="login.html" class="fw-bold text-decoration-none text-primary">Sign In</a></p>
+        </div>
+
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
