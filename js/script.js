@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Password toggle functionality (for login.html)
+    // Password toggle functionality (for signIn.html)
     const togglePassword = document.querySelector('#togglePassword');
     const passwordInput = document.querySelector('#loginPassword');
     const toggleIcon = document.querySelector('#togglePasswordIcon');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Password toggle functionality (for signup.html)
+    // Password toggle functionality (for signUp.html)
     const toggleSignupPassword = document.querySelector('#toggleSignupPassword');
     const signupPasswordInput = document.querySelector('#signupPassword');
     const toggleSignupIcon = document.querySelector('#toggleSignupPasswordIcon');
