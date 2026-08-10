@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoBus - Search Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/searchResults.css">
+</head>
+
+<body style="font-family: 'Inter', sans-serif;">
+
+    <!-- Navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top shadow-sm">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand fw-bold text-primary brand-text d-flex align-items-center" href="index.html">
+                <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg"
+                    alt="Logo" style="height: 40px; margin-right: 10px; border-radius: 8px;">GoBus
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item mx-3">
+                        <a class="nav-link nav-link-custom fw-semibold text-dark" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link nav-link-custom fw-semibold text-dark" href="#">Bookings</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link nav-link-custom fw-semibold text-dark" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link nav-link-custom fw-semibold text-dark" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-none d-lg-flex gap-2">
+                <a href="signIn.html" class="btn btn-primary sign-in-btn px-4 py-2 fw-semibold">SignIn</a>
+                <a href="signUp.html" class="btn btn-primary sign-in-btn px-4 py-2 fw-semibold">SignUp</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Modify Search Bar -->
+    <div class="modify-search-bar">
+        <div class="container">
+            <form class="row g-3 align-items-end">
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold small mb-1"><i class="fa-solid fa-location-dot me-1"></i> From</label>
+                    <input type="text" class="form-control custom-input" value="Mumbai">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold small mb-1"><i class="fa-solid fa-location-arrow me-1"></i> To</label>
+                    <input type="text" class="form-control custom-input" value="Delhi">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold small mb-1"><i class="fa-regular fa-calendar me-1"></i> Date</label>
+                    <input type="date" class="form-control custom-input" value="2026-08-15">
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn w-100 search-btn fw-bold d-flex align-items-center justify-content-center gap-2 py-2">
+                        <i class="fa-solid fa-rotate"></i> Modify Search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Results Section -->
+    <div class="container results-container">
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <div class="col-lg-3 d-none d-lg-block">
+                <div class="filters-sidebar">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold m-0">Filters</h5>
+                        <a href="#" class="text-decoration-none small text-primary">Clear All</a>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <div class="filter-title">Bus Type</div>
+                        <div class="form-check filter-item">
+                            <input class="form-check-input" type="checkbox" id="ac" checked>
+                            <label class="form-check-label text-secondary" for="ac">AC</label>
+                        </div>
+                        <div class="form-check filter-item">
+                            <input class="form-check-input" type="checkbox" id="nonac">
+                            <label class="form-check-label text-secondary" for="nonac">Non AC</label>
+                        </div>
+                        <div class="form-check filter-item">
+                            <input class="form-check-input" type="checkbox" id="sleeper" checked>
+                            <label class="form-check-label text-secondary" for="sleeper">Sleeper</label>
+                        </div>
+                        <div class="form-check filter-item">
+                            <input class="form-check-input" type="checkbox" id="seater">
+                            <label class="form-check-label text-secondary" for="seater">Seater</label>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Bus Cards List -->
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="fw-bold text-dark m-0">12 Buses Found</h4>
+                </div>
+
+                <div class="bus-cards-container">
+                    
+                    <!-- Bus Card 1 -->
+                    <div class="bus-card">
+                        <div class="bus-card-top">
+                            <div class="operator-info">
+                                <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=100&h=100&fit=crop" alt="Operator Logo" class="operator-logo">
+                                <div>
+                                    <h5 class="operator-name">Express Travels</h5>
+                                    <p class="bus-type">A/C Sleeper (2+1)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="journey-info">
+                                <div class="time-block">
+                                    <p class="time">21:30</p>
+                                    <p class="location">Mumbai</p>
+                                </div>
+                                
+                                <div class="duration-block">
+                                    <span class="duration">4h 15m</span>
+                                    <div class="duration-line"></div>
+                                </div>
+
+                                <div class="time-block">
+                                    <p class="time">01:45</p>
+                                    <p class="location">Delhi</p>
+                                </div>
+                            </div>
+
+                            <div class="price-block">
+                                <p class="amount">₹45.00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bus-card-bottom">
+                            <div class="amenities">
+                                <span class="amenity-badge">AC</span>
+                                <span class="amenity-badge">WiFi</span>
+                                <span class="amenity-badge">Water</span>
+                            </div>
+                            <button class="select-seat-btn">Select Seats</button>
+                        </div>
+                    </div>
+
+                    <!-- Bus Card 2 -->
+                    <div class="bus-card">
+                        <div class="bus-card-top">
+                            <div class="operator-info">
+                                <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=100&h=100&fit=crop" alt="Operator Logo" class="operator-logo">
+                                <div>
+                                    <h5 class="operator-name">Express Travels</h5>
+                                    <p class="bus-type">Non A/C Seater (2+2)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="journey-info">
+                                <div class="time-block">
+                                    <p class="time">08:00</p>
+                                    <p class="location">Mumbai</p>
+                                </div>
+                                
+                                <div class="duration-block">
+                                    <span class="duration">5h 00m</span>
+                                    <div class="duration-line"></div>
+                                </div>
+
+                                <div class="time-block">
+                                    <p class="time">13:00</p>
+                                    <p class="location">Delhi</p>
+                                </div>
+                            </div>
+
+                            <div class="price-block">
+                                <p class="amount">₹25.00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bus-card-bottom">
+                            <div class="amenities">
+                                <span class="amenity-badge">Blanket</span>
+                            </div>
+                            <button class="select-seat-btn">Select Seats</button>
+                        </div>
+                    </div>
+
+                    <!-- Bus Card 3 -->
+                    <div class="bus-card">
+                        <div class="bus-card-top">
+                            <div class="operator-info">
+                                <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=100&h=100&fit=crop" alt="Operator Logo" class="operator-logo">
+                                <div>
+                                    <h5 class="operator-name">Express Travels</h5>
+                                    <p class="bus-type">A/C Semi-Sleeper</p>
+                                </div>
+                            </div>
+                            
+                            <div class="journey-info">
+                                <div class="time-block">
+                                    <p class="time">23:00</p>
+                                    <p class="location">Mumbai</p>
+                                </div>
+                                
+                                <div class="duration-block">
+                                    <span class="duration">4h 30m</span>
+                                    <div class="duration-line"></div>
+                                </div>
+
+                                <div class="time-block">
+                                    <p class="time">03:30</p>
+                                    <p class="location">Delhi</p>
+                                </div>
+                            </div>
+
+                            <div class="price-block">
+                                <p class="amount">₹60.00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bus-card-bottom">
+                            <div class="amenities">
+                                <span class="amenity-badge">AC</span>
+                                <span class="amenity-badge">WiFi</span>
+                                <span class="amenity-badge">Blanket</span>
+                                <span class="amenity-badge">Snacks</span>
+                            </div>
+                            <button class="select-seat-btn">Select Seats</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer start -->
+    <footer class="footer-custom mt-5">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg"
+                        alt="Logo" style="height: 40px; margin-right: 10px; border-radius: 8px;">
+                    <div>
+                        <div class="footer-brand">GoBus</div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <a href="index.html">Home</a> <span>|</span>
+                    <a href="#">Book Tickets</a> <span>|</span>
+                    <a href="#">Routes</a> <span>|</span>
+                    <a href="#">Help Center</a> <span>|</span>
+                </div>
+
+                <div class="footer-social-wrapper">
+                    <div class="footer-social-title">Follow us</div>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 GoBus. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <a href="#">Terms & Conditions</a> <span>|</span>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

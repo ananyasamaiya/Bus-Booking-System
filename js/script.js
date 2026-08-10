@@ -1,5 +1,14 @@
 // Nav links functionality (for index.html)
 document.addEventListener('DOMContentLoaded', () => {
+    // Search form submission functionality (for index.html)
+    const bookingForm = document.getElementById('bookingForm');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            window.location.href = 'searchResults.html';
+        });
+    }
+
     document.querySelectorAll('.nav-link-custom').forEach(link => {
         link.addEventListener('click', function (e) {
             // Remove active class from all links
