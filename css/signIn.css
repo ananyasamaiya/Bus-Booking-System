@@ -70,3 +70,8 @@
     background-color: #f8fafc;
     border-color: #cbd5e1;
 }
+/* Extracted Utility Classes */
+.brand-logo-img { height: 40px; margin-right: 10px; border-radius: 8px; }
+.form-label-custom { font-size: 14px; color: #112240; }
+.cursor-pointer { cursor: pointer; }
+.google-icon-img { width: 20px; }

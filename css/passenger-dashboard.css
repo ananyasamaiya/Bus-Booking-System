@@ -323,3 +323,12 @@ body.passenger-body {
     background-color: #e5e7eb;
     margin: 40px 0;
 }
+/* Extracted Utility Classes */
+.brand-logo-img { height: 40px; margin-right: 10px; border-radius: 8px; }
+.modal-profile-setup { max-width: 500px; }
+.text-navy { color: #112240 !important; }
+.gender-icon-male { color: #0d3eb8; font-size: 20px; margin-bottom: 5px; }
+.gender-icon-female { color: #d81b60; font-size: 20px; margin-bottom: 5px; }
+.gender-icon-other { color: #6c757d; font-size: 20px; margin-bottom: 5px; }
+.gender-label-custom { font-size: 13px; font-weight: 500; }
+.btn-primary-blue { background-color: #0d3eb8 !important; border-radius: 6px !important; }

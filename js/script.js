@@ -201,3 +201,10 @@ function completePassengerSignup() {
 function completeOperatorSignup() {
     window.location.href = 'operator/dashboard-home.html';
 }
+
+// Global Logout Function
+function logout() {
+    localStorage.clear();
+    // Redirect to index.html from any subdirectory
+    window.location.href = '../index.html';
+}

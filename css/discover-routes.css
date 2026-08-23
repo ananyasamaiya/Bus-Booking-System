@@ -1,0 +1,45 @@
+/* Discover Routes CSS */
+.search-dropdown {
+    border: none;
+    border-bottom: 2px solid #e2e8f0;
+    border-radius: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #112240;
+    background-color: transparent;
+    transition: border-color 0.2s;
+}
+
+.search-dropdown:focus {
+    box-shadow: none;
+    border-color: #0d3eb8;
+    background-color: transparent;
+}
+
+.search-dropdown option {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.exchange-icon:hover {
+    background: #d1ddfc !important;
+    transform: rotate(180deg);
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.suggested-route-card {
+    cursor: pointer;
+}
+
+.suggested-route-card .btn-outline-primary {
+    border-color: #e2e8f0;
+    color: #0d3eb8;
+}
+
+.suggested-route-card:hover .btn-outline-primary {
+    background-color: #0d3eb8;
+    border-color: #0d3eb8;
+    color: white;
+}

@@ -130,3 +130,25 @@
 .signup-input-group:focus-within .input-group-text {
     border-color: #0d3eb8;
 }
+/* Extracted Utility Classes */
+.brand-logo-img { height: 40px; margin-right: 10px; border-radius: 8px; }
+.text-navy { color: #112240 !important; }
+.text-primary-blue { color: #0d3eb8 !important; }
+.bg-primary-blue { background-color: #0d3eb8 !important; }
+.btn-primary-blue { background-color: #0d3eb8 !important; border-radius: 6px !important; }
+.btn-outline-primary-blue { border: 1px solid #0d3eb8 !important; color: #0d3eb8 !important; border-radius: 6px !important; }
+.btn-outline-secondary-gray { border: 1px solid #e2e8f0 !important; color: #112240 !important; border-radius: 6px !important; }
+.btn-success-green { background-color: #0f8b44 !important; border-radius: 6px !important; }
+.signup-container-main { max-width: 900px; }
+.role-icon-wrapper { background-color: #ebf0fc; color: #0d3eb8; width: 100px; height: 100px; font-size: 40px; }
+.modal-signup { max-width: 450px; }
+.modal-signup-content { border-radius: 16px; }
+.modal-logo-icon { width: 44px; height: 44px; margin-right: 12px; background-color: #0d3eb8; }
+.stepper-container-wrapper { max-width: 250px; }
+.stepper-line-bg { height: 2px; background-color: #e2e8f0; }
+.stepper-line-progress { height: 2px; background-color: #0d3eb8; transition: width 0.3s ease; }
+.form-label-custom { font-size: 13px; color: #112240; }
+.verify-text-info { font-size: 14px; }
+.file-upload-box { border-style: dashed !important; border-color: #cbd5e1 !important; }
+.input-select-custom { border-color: #e2e8f0; font-size: 0.9rem; }
+.base-price-label { font-size: 11px; }

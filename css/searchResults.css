@@ -251,3 +251,6 @@ body {
         text-align: left;
     }
 }
+/* Extracted Utility Classes */
+.brand-logo-img { height: 40px; margin-right: 10px; border-radius: 8px; }
+.body-font-inter { font-family: 'Inter', sans-serif; }

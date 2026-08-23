@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Route - GoBus Operator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/operator-dashboard.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+        
+        <!-- Left Sidebar (Deep Navy) -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo d-flex align-items-center fs-20">
+                <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg" alt="Logo" class="sidebar-brand-img">
+                GoBus Operator
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-home.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                <li><a href="routes.html" class="active"><i class="fa-solid fa-route"></i> Route Planning</a></li>
+                <li><a href="#"><i class="fa-solid fa-list"></i> List Bus Record</a></li>
+                <li><a href="#"><i class="fa-regular fa-calendar-alt"></i> Scheduling</a></li>
+                <li><a href="#"><i class="fa-solid fa-ticket"></i> Booking Management</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="dashboard-main">
+            
+            <!-- Topbar (White) -->
+            <header class="dashboard-topbar justify-content-end">
+                <div class="topbar-links d-none d-md-flex align-items-center">
+                    <a href="dashboard-home.html">Home</a>
+                    <a href="company-profile.html">Profile/Settings</a>
+                    <a href="#" id="logoutBtn" class="logout-btn">Logout</a>
+                </div>
+            </header>
+
+            <!-- Workspace Content -->
+            <main class="dashboard-content">
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <a href="add-route.html" class="btn btn-light border shadow-sm rounded-circle d-flex align-items-center justify-content-center btn-icon-40">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <h4 class="mb-0 text-deep-navy-bold">Select Base Route</h4>
+                </div>
+                
+                <div class="row g-4 mt-2">
+                    <!-- Grid Item 1 -->
+                    <div class="col-md-6">
+                        <div class="bg-white rounded-3 shadow-sm border p-3 d-flex flex-column h-100 hover-scale">
+                            <h5 class="fw-bold mb-1 text-deep-navy">Mumbai ➔ Delhi (Express)</h5>
+                            <p class="text-secondary small mb-3">Via NH48 - Scenic and well-maintained highway.</p>
+                            
+                            <div class="bg-light rounded-3 d-flex align-items-center justify-content-center mb-4 border route-img-wrapper">
+                                <img src="https://cdn.pixabay.com/photo/2013/11/15/13/57/road-210913_1280.jpg" alt="Map" class="route-img-cover">
+                                <div class="position-absolute w-100 h-100 top-0 start-0 border border-3 border-white"></div>
+                            </div>
+                            
+                            <p class="fw-bold text-dark small mb-3"><i class="fa-solid fa-road text-primary me-2"></i> Total Distance: 1,415 km</p>
+                            
+                            <a href="route-stops.html" class="btn btn-outline-primary w-100 mt-auto fw-bold py-2 rounded-8">Select Route</a>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 2 -->
+                    <div class="col-md-6">
+                        <div class="bg-white rounded-3 shadow-sm border p-3 d-flex flex-column h-100 hover-scale">
+                            <h5 class="fw-bold mb-1 text-deep-navy">Mumbai ➔ Delhi (Western Ghats)</h5>
+                            <p class="text-secondary small mb-3">Via NH52 - Scenic route with mountainous terrain.</p>
+                            
+                            <div class="bg-light rounded-3 d-flex align-items-center justify-content-center mb-4 border route-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1421091242698-34f6ad7fc088?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJvdXRlfGVufDB8fDB8fHww" alt="Map" class="route-img-cover">
+                                <div class="position-absolute w-100 h-100 top-0 start-0 border border-3 border-white"></div>
+                            </div>
+                            
+                            <p class="fw-bold text-dark small mb-3"><i class="fa-solid fa-road text-primary me-2"></i> Total Distance: 1,460 km</p>
+                            
+                            <a href="route-stops.html" class="btn btn-outline-primary w-100 mt-auto fw-bold py-2 rounded-8">Select Route</a>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 3 -->
+                    <div class="col-md-6">
+                        <div class="bg-white rounded-3 shadow-sm border p-3 d-flex flex-column h-100 hover-scale">
+                            <h5 class="fw-bold mb-1 text-deep-navy">Mumbai ➔ Delhi (City Connect)</h5>
+                            <p class="text-secondary small mb-3">Connecting major cities - Surat, Ahmedabad, Jaipur.</p>
+                            
+                            <div class="bg-light rounded-3 d-flex align-items-center justify-content-center mb-4 border route-img-wrapper">
+                                <img src="https://plus.unsplash.com/premium_photo-1664547606209-fb31ec979c85?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm91dGV8ZW58MHx8MHx8fDA%3D" alt="Map" class="route-img-cover">
+                                <div class="position-absolute w-100 h-100 top-0 start-0 border border-3 border-white"></div>
+                            </div>
+                            
+                            <p class="fw-bold text-dark small mb-3"><i class="fa-solid fa-road text-primary me-2"></i> Total Distance: 1,430 km</p>
+                            
+                            <a href="route-stops.html" class="btn btn-outline-primary w-100 mt-auto fw-bold py-2 rounded-8">Select Route</a>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 4 -->
+                    <div class="col-md-6">
+                        <div class="bg-white rounded-3 shadow-sm border p-3 d-flex flex-column h-100 hover-scale">
+                            <h5 class="fw-bold mb-1 text-deep-navy">Mumbai ➔ Delhi (Night Rider)</h5>
+                            <p class="text-secondary small mb-3">Direct route with minimal stops for fast overnight travel.</p>
+                            
+                            <div class="bg-light rounded-3 d-flex align-items-center justify-content-center mb-4 border route-img-wrapper">
+                                <img src="https://media.istockphoto.com/id/2082112210/photo/grasslands-and-road.jpg?s=612x612&w=0&k=20&c=XE-PaQ6OZlOdyV9widMFPxTbm-Ssbe_Js8puZnrpQGs=" alt="Map" class="route-img-cover">
+                                <div class="position-absolute w-100 h-100 top-0 start-0 border border-3 border-white"></div>
+                            </div>
+                            
+                            <p class="fw-bold text-dark small mb-3"><i class="fa-solid fa-road text-primary me-2"></i> Total Distance: 1,390 km</p>
+                            
+                            <a href="route-stops.html" class="btn btn-outline-primary w-100 mt-auto fw-bold py-2 rounded-8">Select Route</a>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+document.getElementById('logoutBtn').addEventListener('click', () => {
+            window.location.href = '../index.html';
+        });
+    </script>
+</body>
+</html>

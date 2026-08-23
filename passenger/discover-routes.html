@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Routes - GoBus</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/discover-routes.css">
+</head>
+<body style="font-family: 'Inter', sans-serif; background-color: #f8fafc;">
+
+    <!-- Navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top shadow-sm">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand fw-bold text-primary brand-text d-flex align-items-center" href="../index.html">
+                <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg"
+                    alt="Logo" style="height: 40px; margin-right: 10px; border-radius: 8px;">GoBus
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav align-items-center" data-role-navigation>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link nav-link-custom fw-semibold text-dark" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link nav-link-custom fw-semibold text-dark active" href="#">Discover</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link nav-link-custom fw-semibold text-dark" href="#">Bookings</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link nav-link-custom fw-semibold text-dark" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="authActions" class="d-none d-lg-flex gap-2">
+                <a href="../passenger/profile.html" class="btn btn-outline-primary px-4 py-2 fw-semibold" style="border-radius: 8px;">My Profile</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Main Content -->
+    <main class="container discover-container" style="margin-top: 100px; padding-bottom: 50px;">
+        
+        <!-- Search Section -->
+        <div class="search-section bg-white p-4 rounded-4 shadow-sm mb-5 mx-auto" style="max-width: 900px; border: 1px solid #e2e8f0;">
+            <h4 class="fw-bold mb-4 text-center" style="color: #112240;">Find Your Next Journey</h4>
+            <div class="d-flex flex-column flex-md-row align-items-center gap-3">
+                <div class="flex-grow-1 position-relative w-100">
+                    <label class="form-label fw-semibold text-secondary small mb-1 px-2">FROM</label>
+                    <select class="form-select search-dropdown form-select-lg w-100">
+                        <option selected>Mumbai</option>
+                        <option>Delhi</option>
+                        <option>Bangalore</option>
+                        <option>Chennai</option>
+                        <option>Pune</option>
+                    </select>
+                </div>
+                
+                <div class="exchange-icon d-flex align-items-center justify-content-center mt-3 mt-md-0" style="color: #0d3eb8; font-size: 20px; width: 40px; height: 40px; background: #ebf0fc; border-radius: 50%; cursor: pointer;">
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                </div>
+
+                <div class="flex-grow-1 position-relative w-100">
+                    <label class="form-label fw-semibold text-secondary small mb-1 px-2">TO</label>
+                    <select class="form-select search-dropdown form-select-lg w-100">
+                        <option>Mumbai</option>
+                        <option selected>Delhi</option>
+                        <option>Bangalore</option>
+                        <option>Chennai</option>
+                        <option>Pune</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary search-btn btn-lg fw-bold px-5 mt-4 mt-md-0 h-100 align-self-end" style="background-color: #0d3eb8;">
+                    Search
+                </button>
+            </div>
+        </div>
+
+        <!-- Suggested Routes Section -->
+        <h4 class="fw-bold mb-4" style="color: #112240;">Suggested Routes</h4>
+        
+        <div class="row g-4">
+            
+            <!-- Route Card 1 -->
+            <div class="col-md-6">
+                <div class="suggested-route-card bg-white rounded-4 shadow-sm h-100 d-flex flex-column overflow-hidden" style="border: 1px solid #e2e8f0; transition: transform 0.2s, box-shadow 0.2s;">
+                    <!-- Mini Map Placeholder -->
+                    <div class="map-placeholder position-relative bg-light w-100" style="height: 160px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800" alt="Map" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);"></div>
+                    </div>
+                    
+                    <div class="card-body p-4 d-flex flex-column flex-grow-1 position-relative" style="margin-top: -30px; z-index: 2;">
+                        <span class="badge bg-primary align-self-start mb-2 px-3 py-2 rounded-pill shadow-sm" style="font-size: 12px; font-weight: 600;">Popular</span>
+                        <h4 class="fw-bold mb-1" style="color: #112240;">Mumbai ➔ Delhi</h4>
+                        <p class="text-secondary small mb-3">Scenic overnight route with comfortable sleeper buses and regular rest stops.</p>
+                        
+                        <div class="d-flex align-items-center gap-3 mb-4 mt-auto">
+                            <div class="d-flex align-items-center text-secondary small fw-semibold">
+                                <i class="fa-solid fa-road me-2" style="color: #0d3eb8;"></i> 1400 km
+                            </div>
+                            <div class="d-flex align-items-center text-secondary small fw-semibold">
+                                <i class="fa-regular fa-clock me-2" style="color: #0d3eb8;"></i> 24h 30m
+                            </div>
+                        </div>
+                        
+                        <a href="../searchResults.html" class="btn btn-outline-primary w-100 fw-bold py-2 rounded-3">Select this Route</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Route Card 2 -->
+            <div class="col-md-6">
+                <div class="suggested-route-card bg-white rounded-4 shadow-sm h-100 d-flex flex-column overflow-hidden" style="border: 1px solid #e2e8f0; transition: transform 0.2s, box-shadow 0.2s;">
+                    <!-- Mini Map Placeholder -->
+                    <div class="map-placeholder position-relative bg-light w-100" style="height: 160px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1596889222840-20d0f8d1eb18?auto=format&fit=crop&q=80&w=800" alt="Map" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);"></div>
+                    </div>
+                    
+                    <div class="card-body p-4 d-flex flex-column flex-grow-1 position-relative" style="margin-top: -30px; z-index: 2;">
+                        <span class="badge bg-success align-self-start mb-2 px-3 py-2 rounded-pill shadow-sm" style="font-size: 12px; font-weight: 600;">Fastest</span>
+                        <h4 class="fw-bold mb-1" style="color: #112240;">Bangalore ➔ Chennai</h4>
+                        <p class="text-secondary small mb-3">Direct highway route with high-frequency departures throughout the day.</p>
+                        
+                        <div class="d-flex align-items-center gap-3 mb-4 mt-auto">
+                            <div class="d-flex align-items-center text-secondary small fw-semibold">
+                                <i class="fa-solid fa-road me-2" style="color: #0d3eb8;"></i> 350 km
+                            </div>
+                            <div class="d-flex align-items-center text-secondary small fw-semibold">
+                                <i class="fa-regular fa-clock me-2" style="color: #0d3eb8;"></i> 6h 15m
+                            </div>
+                        </div>
+                        
+                        <a href="../searchResults.html" class="btn btn-outline-primary w-100 fw-bold py-2 rounded-3">Select this Route</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Route Card 3 -->
+            <div class="col-md-6">
+                <div class="suggested-route-card bg-white rounded-4 shadow-sm h-100 d-flex flex-column overflow-hidden" style="border: 1px solid #e2e8f0; transition: transform 0.2s, box-shadow 0.2s;">
+                    <!-- Mini Map Placeholder -->
+                    <div class="map-placeholder position-relative bg-light w-100" style="height: 160px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1596700329971-5509d375323f?auto=format&fit=crop&q=80&w=800" alt="Map" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);"></div>
+                    </div>
+                    
+                    <div class="card-body p-4 d-flex flex-column flex-grow-1 position-relative" style="margin-top: -30px; z-index: 2;">
+                        <span class="badge bg-info text-dark align-self-start mb-2 px-3 py-2 rounded-pill shadow-sm" style="font-size: 12px; font-weight: 600;">Scenic</span>
+                        <h4 class="fw-bold mb-1" style="color: #112240;">Mumbai ➔ Pune</h4>
+                        <p class="text-secondary small mb-3">Beautiful expressway journey crossing the Western Ghats.</p>
+                        
+                        <div class="d-flex align-items-center gap-3 mb-4 mt-auto">
+                            <div class="d-flex align-items-center text-secondary small fw-semibold">
+                                <i class="fa-solid fa-road me-2" style="color: #0d3eb8;"></i> 150 km
+                            </div>
+                            <div class="d-flex align-items-center text-secondary small fw-semibold">
+                                <i class="fa-regular fa-clock me-2" style="color: #0d3eb8;"></i> 3h 00m
+                            </div>
+                        </div>
+                        
+                        <a href="../searchResults.html" class="btn btn-outline-primary w-100 fw-bold py-2 rounded-3">Select this Route</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Route Card 4 -->
+            <div class="col-md-6">
+                <div class="suggested-route-card bg-white rounded-4 shadow-sm h-100 d-flex flex-column overflow-hidden" style="border: 1px solid #e2e8f0; transition: transform 0.2s, box-shadow 0.2s;">
+                    <!-- Mini Map Placeholder -->
+                    <div class="map-placeholder position-relative bg-light w-100" style="height: 160px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&q=80&w=800" alt="Map" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);"></div>
+                    </div>
+                    
+                    <div class="card-body p-4 d-flex flex-column flex-grow-1 position-relative" style="margin-top: -30px; z-index: 2;">
+                        <span class="badge bg-warning text-dark align-self-start mb-2 px-3 py-2 rounded-pill shadow-sm" style="font-size: 12px; font-weight: 600;">Budget</span>
+                        <h4 class="fw-bold mb-1" style="color: #112240;">Delhi ➔ Jaipur</h4>
+                        <p class="text-secondary small mb-3">Frequent non-AC and AC services covering the Golden Triangle route.</p>
+                        
+                        <div class="d-flex align-items-center gap-3 mb-4 mt-auto">
+                            <div class="d-flex align-items-center text-secondary small fw-semibold">
+                                <i class="fa-solid fa-road me-2" style="color: #0d3eb8;"></i> 280 km
+                            </div>
+                            <div class="d-flex align-items-center text-secondary small fw-semibold">
+                                <i class="fa-regular fa-clock me-2" style="color: #0d3eb8;"></i> 5h 30m
+                            </div>
+                        </div>
+                        
+                        <a href="../searchResults.html" class="btn btn-outline-primary w-100 fw-bold py-2 rounded-3">Select this Route</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+document.querySelectorAll('.suggested-route-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+                card.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
+            });
+        });
+    </script>
+</body>
+</html>

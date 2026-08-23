@@ -1,0 +1,27 @@
+/* Add Route specific styles */
+.search-dropdown-custom {
+    border: none;
+    border-bottom: 2px solid #e2e8f0;
+    border-radius: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #112240;
+    background-color: transparent;
+    transition: border-color 0.2s;
+}
+
+.search-dropdown-custom:focus {
+    box-shadow: none;
+    border-color: #0d3eb8;
+}
+
+.exchange-icon {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.exchange-icon:hover {
+    transform: scale(1.1);
+}

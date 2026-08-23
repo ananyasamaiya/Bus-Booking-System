@@ -18,8 +18,8 @@
         
         <!-- Left Sidebar (Deep Navy) -->
         <aside class="dashboard-sidebar">
-            <div class="sidebar-logo d-flex align-items-center" style="font-size: 20px;">
-                <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg" alt="Logo" style="height: 30px; margin-right: 10px; border-radius: 6px;">
+            <div class="sidebar-logo d-flex align-items-center fs-20">
+                <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg" alt="Logo" class="sidebar-brand-img">
                 GoBus Operator
             </div>
             <ul class="sidebar-menu">
@@ -35,7 +35,7 @@
         <div class="dashboard-main">
             
             <!-- Topbar (White) -->
-            <header class="dashboard-topbar" style="justify-content: flex-end;">
+            <header class="dashboard-topbar justify-content-end">
                 <div class="topbar-links d-none d-md-flex align-items-center">
                     <a href="dashboard-home.html">Home</a>
                     <a href="company-profile.html" class="active">Profile/Settings</a>
@@ -45,7 +45,7 @@
 
             <!-- Workspace Content -->
             <main class="dashboard-content">
-                <h4 class="mb-4" style="color: var(--deep-navy); font-weight: 700;">Profile Management</h4>
+                <h4 class="mb-4 text-deep-navy-bold">Profile Management</h4>
                 
                 <!-- Company Profile Card -->
                 <div class="profile-card">
@@ -114,7 +114,7 @@
 
     <!-- Scripts -->
     <script>
-        // Dropdown Logic
+// Dropdown Logic
         function toggleDropdown() {
             const menu = document.getElementById('profileMenu');
             menu.classList.toggle('show');

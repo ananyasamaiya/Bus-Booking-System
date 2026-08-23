@@ -18,13 +18,13 @@
         
         <!-- Left Sidebar (Deep Navy) -->
         <aside class="dashboard-sidebar">
-            <div class="sidebar-logo d-flex align-items-center" style="font-size: 20px;">
-                <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg" alt="Logo" style="height: 30px; margin-right: 10px; border-radius: 6px;">
+            <div class="sidebar-logo d-flex align-items-center fs-20">
+                <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg" alt="Logo" class="sidebar-brand-img">
                 GoBus Operator
             </div>
             <ul class="sidebar-menu">
                 <li><a href="#" class="active"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-                <li><a href="#"><i class="fa-solid fa-route"></i> Route Planning</a></li>
+                <li><a href="routes.html"><i class="fa-solid fa-route"></i> Route Planning</a></li>
                 <li><a href="#"><i class="fa-solid fa-list"></i> List Bus Record</a></li>
                 <li><a href="#"><i class="fa-regular fa-calendar-alt"></i> Scheduling</a></li>
                 <li><a href="#"><i class="fa-solid fa-ticket"></i> Booking Management</a></li>
@@ -35,7 +35,7 @@
         <div class="dashboard-main">
             
             <!-- Topbar (White) -->
-            <header class="dashboard-topbar" style="justify-content: flex-end;">
+            <header class="dashboard-topbar justify-content-end">
                 <div class="topbar-links d-none d-md-flex align-items-center">
                     <a href="dashboard-home.html" class="active">Home</a>
                     <a href="company-profile.html">Profile/Settings</a>
@@ -58,19 +58,19 @@
 
             <!-- Workspace Content -->
             <main class="dashboard-content" id="dashboardContent">
-                <h4 class="mb-4" style="color: var(--deep-navy); font-weight: 700;">Welcome back, Express Travels</h4>
+                <h4 class="mb-4 text-deep-navy-bold">Welcome back, Express Travels</h4>
                 
                 <div class="row g-4">
                     <div class="col-md-6">
                         <div class="bg-white p-4 rounded-3 shadow-sm" style="border: 1px solid #e2e8f0;">
                             <h5 class="fw-bold mb-2 text-dark">Active Buses</h5>
-                            <p class="fs-2 fw-bold" style="color: var(--deep-navy);">12</p>
+                            <p class="fs-2 fw-bold text-deep-navy">12</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="bg-white p-4 rounded-3 shadow-sm" style="border: 1px solid #e2e8f0;">
                             <h5 class="fw-bold mb-2 text-dark">Total Routes</h5>
-                            <p class="fs-2 fw-bold" style="color: var(--deep-navy);">8</p>
+                            <p class="fs-2 fw-bold text-deep-navy">8</p>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
 
     <!-- Scripts -->
     <script>
-        // Dropdown Logic
+// Dropdown Logic
         function toggleDropdown() {
             const menu = document.getElementById('profileMenu');
             menu.classList.toggle('show');
