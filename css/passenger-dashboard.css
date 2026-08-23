@@ -1,0 +1,325 @@
+/* Passenger Dashboard CSS */
+:root {
+    --bg-light: #F3F4F6;
+    --royal-blue: #1E40AF;
+    --royal-blue-hover: #1e3a8a;
+    --charcoal-text: #1f2937;
+    --grey-text: #6b7280;
+    --white: #ffffff;
+    --border-color: #e5e7eb;
+}
+
+body.passenger-body {
+    background-color: var(--bg-light);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--charcoal-text);
+}
+
+/* Navbar */
+.passenger-navbar {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.passenger-brand {
+    font-weight: 800;
+    color: var(--royal-blue);
+    font-size: 22px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.passenger-nav-links a {
+    color: var(--charcoal-text);
+    font-weight: 500;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.passenger-nav-links a:hover,
+.passenger-nav-links a.active {
+    color: var(--royal-blue);
+}
+
+.logout-btn {
+    color: var(--grey-text);
+    background: none;
+    border: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    transition: color 0.2s;
+}
+
+.logout-btn:hover {
+    color: #ef4444;
+}
+
+/* Dashboard Sections */
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--charcoal-text);
+}
+
+/* Trip Card */
+.trip-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trip-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+}
+
+.trip-date-box {
+    text-align: center;
+    padding-right: 24px;
+    border-right: 1px dashed #cbd5e1;
+    min-width: 100px;
+}
+
+.trip-date-month {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--royal-blue);
+    text-transform: uppercase;
+}
+
+.trip-date-day {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--charcoal-text);
+}
+
+.trip-details {
+    flex-grow: 1;
+    padding: 0 24px;
+}
+
+.trip-route {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.trip-meta {
+    font-size: 14px;
+    color: var(--grey-text);
+    display: flex;
+    gap: 16px;
+}
+
+.trip-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.trip-action {
+    text-align: right;
+    min-width: 150px;
+}
+
+.trip-price {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--charcoal-text);
+}
+
+.btn-royal {
+    background-color: var(--royal-blue);
+    color: var(--white);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-royal:hover {
+    background-color: var(--royal-blue-hover);
+    color: var(--white);
+}
+
+/* History Card */
+.history-card {
+    opacity: 0.8;
+}
+.history-card .trip-date-day,
+.history-card .trip-date-month,
+.history-card .trip-route {
+    color: var(--grey-text);
+}
+
+.status-badge {
+    background: #e2e8f0;
+    color: #475569;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px dashed #cbd5e1;
+    display: none; /* hidden by default */
+}
+
+.empty-state-icon {
+    font-size: 64px;
+    color: #cbd5e1;
+    margin-bottom: 24px;
+}
+
+.empty-state h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.empty-state p {
+    color: var(--grey-text);
+    margin-bottom: 30px;
+}
+
+/* Profile Settings */
+.profile-container {
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.profile-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid var(--border-color);
+}
+
+.avatar-wrapper {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.avatar-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #e0e7ff;
+    color: var(--royal-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin: 0 auto 12px;
+}
+
+.change-photo-link {
+    color: var(--royal-blue);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.change-photo-link:hover {
+    text-decoration: underline;
+}
+
+.form-group-custom {
+    margin-bottom: 24px;
+}
+
+.form-group-custom label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--charcoal-text);
+    margin-bottom: 8px;
+}
+
+.form-control-custom {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control-custom:focus {
+    outline: none;
+    border-color: var(--royal-blue);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+/* Gender Selection */
+.gender-selector {
+    display: flex;
+    gap: 16px;
+}
+
+.gender-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    background: var(--white);
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--grey-text);
+}
+
+.gender-btn i {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.gender-btn span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.gender-btn:hover {
+    border-color: #93c5fd;
+    background: #f8fafc;
+}
+
+.gender-btn.active {
+    border-color: var(--royal-blue);
+    background-color: #eff6ff;
+    color: var(--royal-blue);
+}
+
+/* Divider */
+.profile-divider {
+    height: 1px;
+    background-color: #e5e7eb;
+    margin: 40px 0;
+}

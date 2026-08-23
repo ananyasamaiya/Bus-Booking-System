@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Dashboard - GoBus Operator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/operator-dashboard.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+        
+        <!-- Left Sidebar (Deep Navy) -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo d-flex align-items-center" style="font-size: 20px;">
+                <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg" alt="Logo" style="height: 30px; margin-right: 10px; border-radius: 6px;">
+                GoBus Operator
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fa-solid fa-route"></i> Route Planning</a></li>
+                <li><a href="#"><i class="fa-solid fa-list"></i> List Bus Record</a></li>
+                <li><a href="#"><i class="fa-regular fa-calendar-alt"></i> Scheduling</a></li>
+                <li><a href="#"><i class="fa-solid fa-ticket"></i> Booking Management</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="dashboard-main">
+            
+            <!-- Topbar (White) -->
+            <header class="dashboard-topbar" style="justify-content: flex-end;">
+                <div class="topbar-links d-none d-md-flex align-items-center">
+                    <a href="dashboard-home.html" class="active">Home</a>
+                    <a href="company-profile.html">Profile/Settings</a>
+                    <a href="#" id="logoutBtn" class="logout-btn">Logout</a>
+                </div>
+            </header>
+
+            <!-- Greyed-out overlay logic -->
+            <div class="dashboard-disabled-overlay" id="dashboardOverlay">
+                <!-- Modal Popup (Documents Received) -->
+                <div class="modal-modern" id="docModal">
+                    <button class="modal-close-btn" onclick="closeModal()">
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                    <i class="fa-regular fa-circle-check modal-icon"></i>
+                    <h3 class="modal-title">Documents Received</h3>
+                    <p class="modal-text">Your business documents have been received successfully. Please allow 2-3 business days for our Admin team to verify them. Some dashboard features will be limited during this time.</p>
+                </div>
+            </div>
+
+            <!-- Workspace Content -->
+            <main class="dashboard-content" id="dashboardContent">
+                <h4 class="mb-4" style="color: var(--deep-navy); font-weight: 700;">Welcome back, Express Travels</h4>
+                
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="bg-white p-4 rounded-3 shadow-sm" style="border: 1px solid #e2e8f0;">
+                            <h5 class="fw-bold mb-2 text-dark">Active Buses</h5>
+                            <p class="fs-2 fw-bold" style="color: var(--deep-navy);">12</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bg-white p-4 rounded-3 shadow-sm" style="border: 1px solid #e2e8f0;">
+                            <h5 class="fw-bold mb-2 text-dark">Total Routes</h5>
+                            <p class="fs-2 fw-bold" style="color: var(--deep-navy);">8</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Dropdown Logic
+        function toggleDropdown() {
+            const menu = document.getElementById('profileMenu');
+            menu.classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', function(e) {
+            const wrapper = document.querySelector('.profile-wrapper');
+            if (wrapper && !wrapper.contains(e.target)) {
+                document.getElementById('profileMenu').classList.remove('show');
+            }
+        });
+
+        // Show Modal on load (Simulating the state)
+        document.addEventListener("DOMContentLoaded", () => {
+            const overlay = document.getElementById('dashboardOverlay');
+            // By default we can show it immediately
+            overlay.style.display = 'flex';
+        });
+
+        // Modal Logic
+        function closeModal() {
+            // Hide the modal itself
+            document.getElementById('docModal').style.display = 'none';
+            // But keep the overlay blocking the dashboard with a greyed out effect
+            // We just need to make the content greyed out and overlay empty but blocking
+            document.getElementById('dashboardContent').classList.add('greyed-out');
+            
+            // Optionally, we can show a small badge instead, but the prompt says 
+            // "dashboard behind it should be slightly greyed out or disabled"
+            const overlay = document.getElementById('dashboardOverlay');
+            overlay.style.background = 'transparent'; 
+            overlay.style.backdropFilter = 'none';
+            // The greyed-out class on dashboardContent handles the opacity and pointer-events
+        }
+
+        // Mock Logout
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.clear();
+            window.location.href = '../index.html';
+        });
+    </script>
+</body>
+</html>

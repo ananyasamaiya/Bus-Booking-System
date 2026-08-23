@@ -193,3 +193,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+function completePassengerSignup() {
+    window.location.href = 'passenger/dashboard.html?showProfileModal=true';
+}
+
+function completeOperatorSignup() {
+    window.location.href = 'operator/dashboard-home.html';
+}

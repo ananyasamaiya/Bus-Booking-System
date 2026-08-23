@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - GoBus</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/passenger-dashboard.css">
+    <link rel="stylesheet" href="../css/completeProfile.css">
+</head>
+<body class="passenger-body">
+
+    <!-- Navbar -->
+    <nav class="passenger-navbar">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <a href="dashboard.html" class="passenger-brand">
+                <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg" alt="Logo" style="height: 40px; margin-right: 10px; border-radius: 8px">
+                <div class="text-dark fw-bold fs-4">GoBus</div>
+            </a>
+            
+            <div class="passenger-nav-links d-none d-md-flex align-items-center">
+                <a href="dashboard.html">Home</a>
+                <a href="dashboard.html" class="active">My Bookings</a>
+                <a href="profile.html">Profile/Settings</a>
+                <button class="logout-btn ms-2" onclick="logout()">Logout</button>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="btn d-md-none border-0 fs-4 text-secondary">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Workspace -->
+    <main class="container py-5">
+        
+
+        <!-- Bookings Content -->
+        <div id="bookingsContent">
+            
+            <!-- Upcoming Trips Section -->
+            <div class="mb-5">
+                <h2 class="section-title">Upcoming Trips</h2>
+                
+                <div class="trip-card">
+                    <div class="trip-date-box">
+                        <div class="trip-date-month">Oct</div>
+                        <div class="trip-date-day">15</div>
+                    </div>
+                    
+                    <div class="trip-details">
+                        <div class="trip-route">Mumbai <i class="fa-solid fa-arrow-right mx-2 text-secondary fs-6"></i> Delhi</div>
+                        <div class="trip-meta">
+                            <span><i class="fa-regular fa-clock"></i> 10:30 PM</span>
+                            <span><i class="fa-solid fa-bus"></i> Express Travels AC Sleeper</span>
+                            <span><i class="fa-solid fa-couch"></i> Seat 14U</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-action">
+                        <div class="trip-price">₹1,850</div>
+                        <a href="#" class="btn-royal">View E-Ticket</a>
+                    </div>
+                </div>
+
+                <div class="trip-card">
+                    <div class="trip-date-box">
+                        <div class="trip-date-month">Nov</div>
+                        <div class="trip-date-day">02</div>
+                    </div>
+                    
+                    <div class="trip-details">
+                        <div class="trip-route">Delhi <i class="fa-solid fa-arrow-right mx-2 text-secondary fs-6"></i> Jaipur</div>
+                        <div class="trip-meta">
+                            <span><i class="fa-regular fa-clock"></i> 06:00 AM</span>
+                            <span><i class="fa-solid fa-bus"></i> Royal Cruiser Volvo</span>
+                            <span><i class="fa-solid fa-couch"></i> Seat 4, 5</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-action">
+                        <div class="trip-price">₹1,200</div>
+                        <a href="#" class="btn-royal">View E-Ticket</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Travel History Section -->
+            <div>
+                <h2 class="section-title">Travel History</h2>
+                
+                <div class="trip-card history-card">
+                    <div class="trip-date-box">
+                        <div class="trip-date-month">Aug</div>
+                        <div class="trip-date-day">24</div>
+                    </div>
+                    
+                    <div class="trip-details">
+                        <div class="trip-route">Pune <i class="fa-solid fa-arrow-right mx-2 text-secondary fs-6"></i> Mumbai</div>
+                        <div class="trip-meta">
+                            <span><i class="fa-regular fa-clock"></i> 08:15 AM</span>
+                            <span><i class="fa-solid fa-bus"></i> Neeta Tours</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-action text-end">
+                        <span class="status-badge"><i class="fa-solid fa-check me-1"></i> Completed</span>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </main>
+
+    <!-- Complete Profile Modal -->
+    <div class="modal fade" id="completeProfileModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 500px;">
+            <div class="modal-content profile-card p-4 m-0">
+                <div class="text-center mb-4">
+                    <h4 class="fw-bold" style="color: #112240;">Just a few more details</h4>
+                    <p class="text-secondary small">Help us personalize your booking experience. We only ask for what we need.</p>
+                </div>
+                
+                <form id="passengerProfileForm">
+                    <div class="mb-3 text-start">
+                        <label class="form-label">Gender</label>
+                        <div class="gender-selector d-flex justify-content-between gap-2">
+                            <div class="gender-card active flex-fill text-center p-2 rounded" onclick="selectGender(this, 'Male')">
+                                <i class="fa-solid fa-mars gender-icon" style="color: #0d3eb8; font-size: 20px; margin-bottom: 5px;"></i>
+                                <div class="gender-label" style="font-size: 13px; font-weight: 500;">Male</div>
+                            </div>
+                            <div class="gender-card flex-fill text-center p-2 rounded" onclick="selectGender(this, 'Female')">
+                                <i class="fa-solid fa-venus gender-icon" style="color: #d81b60; font-size: 20px; margin-bottom: 5px;"></i>
+                                <div class="gender-label" style="font-size: 13px; font-weight: 500;">Female</div>
+                            </div>
+                            <div class="gender-card flex-fill text-center p-2 rounded" onclick="selectGender(this, 'Other')">
+                                <i class="fa-solid fa-genderless gender-icon" style="color: #6c757d; font-size: 20px; margin-bottom: 5px;"></i>
+                                <div class="gender-label" style="font-size: 13px; font-weight: 500;">Other</div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="gender" id="selectedGender" value="Male">
+                    </div>
+                    
+                    <div class="mb-3 text-start">
+                        <label class="form-label" for="dob">Date of Birth</label>
+                        <input type="date" class="form-control profile-input" id="dob" name="dob" required>
+                    </div>
+                    
+                    <div class="mb-4 text-start">
+                        <label class="form-label" for="city">City of Residence</label>
+                        <input type="text" class="form-control profile-input" id="city" name="city" placeholder="e.g., Mumbai, Delhi" required>
+                    </div>
+                    
+                    <button type="button" class="btn w-100 py-2 mb-2 text-white fw-semibold" style="background-color: #0d3eb8; border-radius: 6px;" onclick="finishProfile()">
+                        Complete Profile & Continue
+                    </button>
+                    
+                    <div class="text-center">
+                        <a href="#" class="text-secondary small text-decoration-none" onclick="finishProfile()">Skip for now</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('showProfileModal') === 'true') {
+                const profileModal = new bootstrap.Modal(document.getElementById('completeProfileModal'));
+                profileModal.show();
+                // Clean the URL so it doesn't reappear on refresh
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
+
+        function selectGender(element, genderValue) {
+            const cards = document.querySelectorAll(".gender-card");
+            cards.forEach((card) => card.classList.remove("active"));
+            element.classList.add("active");
+            document.getElementById("selectedGender").value = genderValue;
+        }
+
+        function finishProfile() {
+            const profileModal = bootstrap.Modal.getInstance(document.getElementById('completeProfileModal'));
+            if(profileModal) {
+                profileModal.hide();
+            }
+        }
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = '../index.html';
+        }
+    </script>
+</body>
+</html>
