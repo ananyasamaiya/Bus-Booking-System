@@ -1,0 +1,70 @@
+
+
+.stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.custom-booking-table th {
+    font-weight: 600;
+    color: var(--deep-navy);
+    border-bottom: 2px solid #e9ecef;
+    padding: 1rem;
+    white-space: nowrap;
+}
+
+.custom-booking-table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.custom-booking-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.custom-booking-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.view-manifest-btn {
+    border-color: var(--deep-navy);
+    color: var(--deep-navy);
+    transition: all 0.3s ease;
+}
+
+.view-manifest-btn:hover {
+    background-color: var(--deep-navy);
+    color: white;
+}
+
+#manifestTable th {
+    font-weight: 600;
+    color: var(--deep-navy);
+}
+
+#manifestTable td {
+    vertical-align: middle;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #manifestModal .modal-content, 
+    #manifestModal .modal-content * {
+        visibility: visible;
+    }
+    #manifestModal .modal-content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    #printManifestBtn, .btn-close {
+        display: none !important;
+    }
+}

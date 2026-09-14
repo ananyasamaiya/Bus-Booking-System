@@ -11,7 +11,6 @@
 </head>
 <body class="signup-body">
 
-    <!-- Header -->
     <header class="signup-header d-flex align-items-center px-4 py-3">
         <a href="index.html" class="text-decoration-none d-flex align-items-center">
              <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg"
@@ -20,7 +19,6 @@
         </a>
     </header>
 
-    <!-- Main Content -->
     <main class="container py-5 mt-4">
         <div class="text-center mb-5 mt-4">
             <h1 class="fw-bold text-navy">Create Your Account</h1>
@@ -28,7 +26,7 @@
         </div>
 
         <div class="row justify-content-center g-4 mx-auto signup-container-main">
-            <!-- Traveler Card -->
+            
             <div class="col-md-5">
                 <div class="card signup-card h-100 border-0 shadow text-center p-5 rounded-4" >
                     <div class="icon-wrapper mx-auto mb-4 rounded-circle d-flex align-items-center justify-content-center role-icon-wrapper">
@@ -41,8 +39,7 @@
                     </button>
                 </div>
             </div>
-            
-            <!-- Operator Card -->
+
             <div class="col-md-5">
                 <div class="card signup-card h-100 border-0 shadow text-center p-5 rounded-4">
                     <div class="icon-wrapper mx-auto mb-4 rounded-circle d-flex align-items-center justify-content-center role-icon-wrapper">
@@ -56,15 +53,13 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Traveler Signup Modal -->
+
         <div class="modal fade" id="travelerSignupModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-signup">
                 <div class="modal-content border-0 shadow-lg modal-signup-content">
                     <div class="modal-body p-4 position-relative">
                         <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-                        
-                        <!-- Header -->
+
                         <div class="text-center mb-3">
                             <div class="d-inline-flex align-items-center justify-content-center rounded-circle modal-logo-icon">
                                 <i class="fa-solid fa-bus text-white fs-5"></i>
@@ -72,7 +67,6 @@
                             <span class="fw-bold fs-4 align-middle text-primary-blue">GoBus</span>
                         </div>
 
-                        <!-- Stepper -->
                         <div class="d-flex justify-content-center align-items-center mb-2 position-relative stepper-container mx-auto stepper-container-wrapper">
                             <div class="stepper-line position-absolute top-50 start-0 end-0 translate-middle-y z-0 stepper-line-bg"></div>
                             <div class="stepper-line-active position-absolute top-50 start-0 translate-middle-y z-0 stepper-line-progress" id="stepperLineActive"  style="width: 0%;"></div>
@@ -87,7 +81,6 @@
                             <small class="text-primary fw-semibold text-primary-blue" id="stepIndicatorText" >Step 1 of 3</small>
                         </div>
 
-                        <!-- Step 1: Create Account -->
                         <div id="modalStep1">
                             <h4 class="fw-bold text-center mb-1 text-navy">Create Your Account</h4>
                             
@@ -131,7 +124,6 @@
                             </form>
                         </div>
 
-                        <!-- Step 2: Verify Email -->
                         <div id="modalStep2" class="d-none text-center">
                             <h4 class="fw-bold mb-2 text-navy">Verify Your Email</h4>
                             <p class="text-secondary mb-4 verify-text-info">Enter the 6-digit code sent to<br><span class="fw-semibold text-primary-blue">ananya.samaiya@gmail.com</span></p>
@@ -156,7 +148,6 @@
                             </button>
                         </div>
 
-                        <!-- Step 3: Verify Phone -->
                         <div id="modalStep3" class="d-none text-center">
                             <h4 class="fw-bold mb-2 text-navy">Verify Your Phone</h4>
                             <p class="text-secondary mb-4 verify-text-info">Enter the 6-digit code sent to<br><span class="fw-semibold text-primary-blue">+91 98765 43210</span></p>
@@ -185,15 +176,13 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Operator Signup Modal -->
+
         <div class="modal fade" id="operatorSignupModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-signup">
                 <div class="modal-content border-0 shadow-lg modal-signup-content">
                     <div class="modal-body p-4 position-relative">
                         <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-                        
-                        <!-- Header -->
+
                         <div class="text-center mb-3">
                             <div class="d-inline-flex align-items-center justify-content-center rounded-circle modal-logo-icon">
                                 <i class="fa-solid fa-bus text-white fs-5"></i>
@@ -201,7 +190,6 @@
                             <span class="fw-bold fs-4 align-middle text-primary-blue">GoBus</span>
                         </div>
 
-                        <!-- Stepper -->
                         <div class="d-flex justify-content-center align-items-center mb-2 position-relative stepper-container mx-auto stepper-container-wrapper">
                             <div class="stepper-line position-absolute top-50 start-0 end-0 translate-middle-y z-0 stepper-line-bg"></div>
                             <div class="stepper-line-active position-absolute top-50 start-0 translate-middle-y z-0 stepper-line-progress" id="opStepperLineActive"  style="width: 0%;"></div>
@@ -216,7 +204,6 @@
                             <small class="text-primary fw-semibold text-primary-blue" id="opStepIndicatorText" >Step 1 of 3</small>
                         </div>
 
-                        <!-- Step 1: Create Your Account -->
                         <div id="opModalStep1">
                             <h4 class="fw-bold text-center mb-1 text-navy">Create Your Account</h4>
                             
@@ -257,7 +244,6 @@
                             </form>
                         </div>
 
-                        <!-- Step 2: Profile -->
                         <div id="opModalStep2" class="d-none">
                             <h4 class="fw-bold text-center mb-1 text-navy">Profile</h4>
                             
@@ -306,7 +292,6 @@
                             </form>
                         </div>
 
-                        <!-- Step 3: Document Upload -->
                         <div id="opModalStep3" class="d-none">
                             <h4 class="fw-bold text-center mb-1 text-navy">Document Upload</h4>
                             

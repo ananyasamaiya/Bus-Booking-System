@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Seats - GoBus</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/passenger-dashboard.css">
+    <link rel="stylesheet" href="../css/seat-selection.css">
+</head>
+<body class="passenger-body">
+
+    <!-- Navbar -->
+    <nav class="passenger-navbar">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <a href="dashboard.html" class="passenger-brand">
+                <img src="https://t3.ftcdn.net/jpg/02/14/29/22/360_F_214292295_dsMiBAa83bToIrvyKXeXDJyZtaK0S2bv.jpg" alt="Logo" class="brand-logo-img">
+                <div class="text-dark fw-bold fs-4">GoBus</div>
+            </a>
+            
+            <div class="passenger-nav-links d-none d-md-flex align-items-center">
+                <a href="dashboard.html">Home</a>
+                <a href="dashboard.html">My Bookings</a>
+                <a href="profile.html">Profile/Settings</a>
+                <button class="logout-btn ms-2" onclick="window.location.href='../index.html'">Logout</button>
+            </div>
+            
+            <button class="btn d-md-none border-0 fs-4 text-secondary">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Trip Summary Bar -->
+    <div class="trip-summary-bar py-3">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-4">
+                <div>
+                    <h5 class="mb-0 fw-bold" style="color: var(--primary-blue);">Mumbai <i class="fas fa-arrow-right mx-2 text-muted fs-6"></i> Delhi</h5>
+                </div>
+                <div class="border-start ps-4">
+                    <span class="text-muted small d-block">Departure Date</span>
+                    <span class="fw-bold">Oct 15, 2026 | 22:30</span>
+                </div>
+                <div class="border-start ps-4 d-none d-md-block">
+                    <span class="text-muted small d-block">Bus Type</span>
+                    <span class="fw-bold">Volvo AC Sleeper (2x1)</span>
+                </div>
+            </div>
+            <button class="btn btn-outline-secondary btn-sm d-none d-md-block" onclick="history.back()">Modify Search</button>
+        </div>
+    </div>
+
+    <!-- Main Layout -->
+    <main class="container py-4">
+        <div class="row g-4">
+            
+            <!-- Left Column: Bus Map -->
+            <div class="col-lg-8">
+                <div class="bus-map-card">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold mb-0">Select your seats</h5>
+                        <!-- Deck Toggle for Double Decker -->
+                        <div class="btn-group deck-toggle shadow-sm" role="group">
+                            <button type="button" class="btn btn-sm active px-3">Lower Deck</button>
+                            <button type="button" class="btn btn-sm px-3">Upper Deck</button>
+                        </div>
+                    </div>
+
+                    <!-- Legend -->
+                    <div class="d-flex flex-wrap gap-4 mb-4 justify-content-center">
+                        <div class="legend-item"><div class="legend-box available"></div> Available</div>
+                        <div class="legend-item"><div class="legend-box selected"></div> Selected</div>
+                        <div class="legend-item"><div class="legend-box occupied"></div> Occupied</div>
+                        <div class="legend-item"><div class="legend-box ladies"></div> Ladies Only</div>
+                    </div>
+
+                    <!-- Visual Bus Map -->
+                    <div class="bus-interior shadow-sm">
+                        <i class="fas fa-steering-wheel steering-wheel"></i>
+                        <!-- Rendered via JS -->
+                        <div class="seat-grid justify-content-center" id="seatGrid">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-light rounded text-muted small border">
+                        <i class="fas fa-info-circle me-2"></i><strong>Overlap Logic Info:</strong> A seat appears occupied if a previously booked passenger's trip segment overlaps with yours. If a passenger gets off at your boarding point, their seat will be available for you!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Booking Summary -->
+            <div class="col-lg-4">
+                <div class="booking-summary-card">
+                    <h5 class="fw-bold mb-4">Booking Summary</h5>
+                    
+                    <div class="mb-4">
+                        <label class="form-label text-muted small fw-bold text-uppercase">Boarding Point</label>
+                        <select class="form-select form-select-sm mb-3 shadow-sm">
+                            <option>Andheri East (22:30)</option>
+                            <option>Borivali (23:15)</option>
+                        </select>
+                        
+                        <label class="form-label text-muted small fw-bold text-uppercase">Dropping Point</label>
+                        <select class="form-select form-select-sm shadow-sm">
+                            <option>Kashmere Gate (14:00)</option>
+                            <option>Anand Vihar (15:30)</option>
+                        </select>
+                    </div>
+
+                    <hr class="text-muted my-4">
+
+                    <div class="mb-3">
+                        <span class="text-muted fw-bold d-block mb-2">Selected Seats</span>
+                        <div class="fs-5 fw-bold" style="color: var(--primary-blue);" id="selectedSeatsList">None</div>
+                    </div>
+
+                    <div class="fare-breakdown bg-light p-3 rounded mb-4 border">
+                        <div class="price-row">
+                            <span>Base Price</span>
+                            <span class="fw-bold text-dark" id="basePrice">$0.00</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Taxes & Fees</span>
+                            <span class="fw-bold text-dark" id="taxes">$0.00</span>
+                        </div>
+                        <div class="price-total">
+                            <span>Total Amount</span>
+                            <span id="totalAmount">$0.00</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-checkout">Proceed to Checkout <i class="fas fa-arrow-right ms-2"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/seat-selection.js"></script>
+</body>
+</html>

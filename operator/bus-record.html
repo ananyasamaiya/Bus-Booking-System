@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Bus Record - GoBus Operator</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/operator-dashboard.css">
+    <link rel="stylesheet" href="../css/bus-record.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+
+        <div id="sidebar-container"></div>
+
+        <div class="dashboard-main">
+
+            <header class="dashboard-topbar justify-content-end">
+                <div class="topbar-links d-none d-md-flex align-items-center">
+                    <a href="dashboard-home.html">Home</a>
+                    <a href="company-profile.html">Profile/Settings</a>
+                    <a href="#" id="logoutBtn" class="logout-btn">Logout</a>
+                </div>
+            </header>
+
+            <main class="dashboard-content" id="dashboardContent">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="text-deep-navy-bold mb-0">List Bus Record</h4>
+                    <button id="addBusBtn" class="btn btn-primary" style="background-color: var(--deep-navy); border-color: var(--deep-navy);" data-bs-toggle="modal" data-bs-target="#addBusModal">
+                        <i class="fas fa-plus"></i> Add Bus
+                    </button>
+                </div>
+
+                <div class="bus-grid">
+                    
+                    <div class="bus-card">
+                        <div class="bus-photo">
+                            <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bus Photo 1" class="bus-image-fit">
+                        </div>
+                        <div class="bus-details">
+                            <div class="detail-row">
+                                <span class="label">RTO Number:</span>
+                                <span class="value rto-bold">MP04 5434</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Model/Mfg:</span>
+                                <span class="value">Volvo</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Type:</span>
+                                <span class="value">2*2 Sleeper(A/C) <button class="btn btn-sm btn-light border">View</button></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Total Seats:</span>
+                                <span class="value">24</span>
+                            </div>
+                        </div>
+                        <div class="card-actions mt-3">
+                            <button class="btn btn-outline-secondary w-50 me-2" data-bs-toggle="modal" data-bs-target="#modifyBusModal"><i class="fas fa-edit"></i> Modify</button>
+                            <button class="btn btn-outline-danger w-50"><i class="fas fa-trash-alt"></i> Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-photo">
+                            <img src="https://images.unsplash.com/photo-1570125909517-53cb21c89ff2?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bus Photo 2" class="bus-image-fit">
+                        </div>
+                        <div class="bus-details">
+                            <div class="detail-row">
+                                <span class="label">RTO Number:</span>
+                                <span class="value rto-bold">DL01 AB 1234</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Model/Mfg:</span>
+                                <span class="value">Scania</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Type:</span>
+                                <span class="value">2*2 Sleeper <button class="btn btn-sm btn-light border">View</button></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Total Seats:</span>
+                                <span class="value">24</span>
+                            </div>
+                        </div>
+                        <div class="card-actions mt-3">
+                            <button class="btn btn-outline-secondary w-50 me-2" data-bs-toggle="modal" data-bs-target="#modifyBusModal"><i class="fas fa-edit"></i> Modify</button>
+                            <button class="btn btn-outline-danger w-50"><i class="fas fa-trash-alt"></i> Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addBusModal" tabindex="-1" aria-labelledby="addBusModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-between align-items-center">
+                    <h2 class="h5 mb-0" id="addBusModalLabel" style="color: var(--deep-navy); font-weight: 700;">Add New Bus</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-start">
+                    <form id="addBusForm" class="bus-form">
+                    
+                    <div class="mb-3">
+                        <label for="manufacturer" class="form-label fw-bold">Manufacturer</label>
+                        <input type="text" id="manufacturer" name="manufacturer" class="form-control" placeholder="e.g. Volvo, Scania" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="rtoNumber" class="form-label fw-bold">RTO Number</label>
+                        <input type="text" id="rtoNumber" name="rtoNumber" class="form-control" placeholder="e.g. MP04 5434" required>
+                    </div>
+
+                    <div class="mb-3 toggle-group">
+                        <label class="form-label fw-bold d-block">Air Conditioning</label>
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="fw-semibold">NON-AC</span>
+                            <label class="switch mb-0">
+                                <input type="checkbox" id="isAc" name="isAc" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="fw-semibold">AC</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="busType" class="form-label fw-bold">Bus Type</label>
+                        <div class="d-flex gap-2">
+                            <select id="busType" name="busType" class="form-select" required>
+                                <option value="" disabled selected>Select layout...</option>
+                                <option value="2*2 Seater">2*2 Seater</option>
+                                <option value="2*3 Seater">2*3 Seater</option>
+                                <option value="2*1 Sleeper">2*1 Sleeper</option>
+                                <option value="2*2 Sleeper">2*2 Sleeper</option>
+                                <option value="Double Decker Sleeper">Double Decker Sleeper</option>
+                            </select>
+                            <button type="button" class="btn btn-light border text-nowrap"><i class="far fa-eye"></i> Layout</button>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Amenities</label>
+                        <div class="d-flex flex-column gap-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="mealProvided" id="mealProvided">
+                                <label class="form-check-label" for="mealProvided">Meal Provided (+ Charge)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="blanketPillow" id="blanketPillow">
+                                <label class="form-check-label" for="blanketPillow">Blanket & Pillow (+ Charge)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="totalSeats" class="form-label fw-bold">Total Seats</label>
+                        <input type="number" id="totalSeats" name="totalSeats" class="form-control" placeholder="e.g. 24" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Upload Photos</label>
+                        <div class="d-flex gap-2">
+                            <button type="button" class="btn btn-outline-secondary w-50 upload-btn" id="extPhotoBtn">
+                                <i class="fas fa-camera"></i> Exterior Photos
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary w-50 upload-btn" id="intPhotoBtn">
+                                <i class="fas fa-couch"></i> Interior Photos
+                            </button>
+                            <input type="file" id="exteriorPhotos" name="exteriorPhotos" multiple accept="image/*" hidden>
+                            <input type="file" id="interiorPhotos" name="interiorPhotos" multiple accept="image/*" hidden>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" form="addBusForm" class="btn btn-primary" style="background-color: var(--deep-navy); border-color: var(--deep-navy);">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modifyBusModal" tabindex="-1" aria-labelledby="modifyBusModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-between align-items-center">
+                    <h2 class="h5 mb-0" id="modifyBusModalLabel" style="color: var(--deep-navy); font-weight: 700;">Modify Bus</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-start">
+                    <form id="modifyBusForm" class="bus-form">
+                    
+                    <div class="mb-3">
+                        <label for="modManufacturer" class="form-label fw-bold">Manufacturer</label>
+                        <input type="text" id="modManufacturer" name="manufacturer" class="form-control" value="Volvo" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="modRtoNumber" class="form-label fw-bold">RTO Number</label>
+                        <input type="text" id="modRtoNumber" name="rtoNumber" class="form-control" value="MP04 5434" required>
+                    </div>
+
+                    <div class="mb-3 toggle-group">
+                        <label class="form-label fw-bold d-block">Air Conditioning</label>
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="fw-semibold">NON-AC</span>
+                            <label class="switch mb-0">
+                                <input type="checkbox" id="modIsAc" name="isAc" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="fw-semibold">AC</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="modBusType" class="form-label fw-bold">Bus Type</label>
+                        <div class="d-flex gap-2">
+                            <select id="modBusType" name="busType" class="form-select" required>
+                                <option value="2*2 Seater">2*2 Seater</option>
+                                <option value="2*3 Seater">2*3 Seater</option>
+                                <option value="2*1 Sleeper">2*1 Sleeper</option>
+                                <option value="2*2 Sleeper" selected>2*2 Sleeper</option>
+                                <option value="Double Decker Sleeper">Double Decker Sleeper</option>
+                            </select>
+                            <button type="button" class="btn btn-light border text-nowrap"><i class="far fa-eye"></i> Layout</button>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Amenities</label>
+                        <div class="d-flex flex-column gap-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="mealProvided" id="modMealProvided" checked>
+                                <label class="form-check-label" for="modMealProvided">Meal Provided (+ Charge)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="blanketPillow" id="modBlanketPillow" checked>
+                                <label class="form-check-label" for="modBlanketPillow">Blanket & Pillow (+ Charge)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="modTotalSeats" class="form-label fw-bold">Total Seats</label>
+                        <input type="number" id="modTotalSeats" name="totalSeats" class="form-control" value="24" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Upload Photos (Optional)</label>
+                        <div class="d-flex gap-2">
+                            <button type="button" class="btn btn-outline-secondary w-50 upload-btn" id="modExtPhotoBtn">
+                                <i class="fas fa-camera"></i> Update Exterior
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary w-50 upload-btn" id="modIntPhotoBtn">
+                                <i class="fas fa-couch"></i> Update Interior
+                            </button>
+                            <input type="file" id="modExteriorPhotos" name="exteriorPhotos" multiple accept="image/*" hidden>
+                            <input type="file" id="modInteriorPhotos" name="interiorPhotos" multiple accept="image/*" hidden>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" form="modifyBusForm" class="btn btn-primary" style="background-color: var(--deep-navy); border-color: var(--deep-navy);">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bus-record.js"></script>
+    <script>
+        // Mock Logout 
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.clear();
+            window.location.href = '../index.html';
+        });
+    </script>
+    <script src="js/sidebar-loader.js"></script>
+</body>
+</html>

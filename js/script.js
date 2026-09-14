@@ -1,6 +1,6 @@
-// Nav links functionality (for index.html)
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Search form submission functionality (for index.html)
+
     const bookingForm = document.getElementById('bookingForm');
     if (bookingForm) {
         bookingForm.addEventListener('submit', function (e) {
@@ -11,28 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.nav-link-custom').forEach(link => {
         link.addEventListener('click', function (e) {
-            // Remove active class from all links
+
             document.querySelectorAll('.nav-link-custom').forEach(el => el.classList.remove('active', 'text-dark'));
             document.querySelectorAll('.nav-link-custom').forEach(el => el.classList.add('text-dark'));
 
-            // Add active class to clicked link and remove text-dark
             this.classList.add('active');
             this.classList.remove('text-dark');
         });
     });
 
-    // Password toggle functionality (for signIn.html)
     const togglePassword = document.querySelector('#togglePassword');
     const passwordInput = document.querySelector('#loginPassword');
     const toggleIcon = document.querySelector('#togglePasswordIcon');
 
     if (togglePassword && passwordInput && toggleIcon) {
         togglePassword.addEventListener('click', function (e) {
-            // Toggle the type attribute
+
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
-            
-            // Toggle the eye / eye slash icon
+
             if (type === 'password') {
                 toggleIcon.classList.remove('fa-eye-slash');
                 toggleIcon.classList.add('fa-eye');
@@ -43,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Password toggle functionality (for signUp.html)
     const toggleSignupPassword = document.querySelector('#toggleSignupPassword');
     const signupPasswordInput = document.querySelector('#signupPassword');
     const toggleSignupIcon = document.querySelector('#toggleSignupPasswordIcon');
@@ -63,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Password toggle functionality (for operator modal)
     const toggleOperatorPassword = document.querySelector('#toggleOperatorPassword');
     const operatorPasswordInput = document.querySelector('#operatorPassword');
     const toggleOperatorIcon = document.querySelector('#toggleOperatorPasswordIcon');
@@ -84,9 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Traveler Signup Modal Multi-Step Logic
 function goToStep(stepNumber) {
-    // Hide all steps
+
     const step1 = document.getElementById('modalStep1');
     const step2 = document.getElementById('modalStep2');
     const step3 = document.getElementById('modalStep3');
@@ -95,15 +89,12 @@ function goToStep(stepNumber) {
     if (step2) step2.classList.add('d-none');
     if (step3) step3.classList.add('d-none');
 
-    // Show the target step
     const targetStep = document.getElementById('modalStep' + stepNumber);
     if (targetStep) targetStep.classList.remove('d-none');
 
-    // Update Step Indicator Text
     const indicatorText = document.getElementById('stepIndicatorText');
     if (indicatorText) indicatorText.innerText = `Step ${stepNumber} of 3`;
 
-    // Update Progress Bar Line
     const progressBar = document.getElementById('stepperLineActive');
     if (progressBar) {
         if (stepNumber === 1) progressBar.style.width = '0%';
@@ -111,7 +102,6 @@ function goToStep(stepNumber) {
         else if (stepNumber === 3) progressBar.style.width = '100%';
     }
 
-    // Update Circles
     for (let i = 1; i <= 3; i++) {
         const circle = document.getElementById('stepCircle' + i);
         if (circle) {
@@ -128,9 +118,8 @@ function goToStep(stepNumber) {
     }
 }
 
-// Operator Signup Modal Multi-Step Logic
 function goToOperatorStep(stepNumber) {
-    // Hide all steps
+
     const step1 = document.getElementById('opModalStep1');
     const step2 = document.getElementById('opModalStep2');
     const step3 = document.getElementById('opModalStep3');
@@ -139,15 +128,12 @@ function goToOperatorStep(stepNumber) {
     if (step2) step2.classList.add('d-none');
     if (step3) step3.classList.add('d-none');
 
-    // Show the target step
     const targetStep = document.getElementById('opModalStep' + stepNumber);
     if (targetStep) targetStep.classList.remove('d-none');
 
-    // Update Step Indicator Text
     const indicatorText = document.getElementById('opStepIndicatorText');
     if (indicatorText) indicatorText.innerText = `Step ${stepNumber} of 3`;
 
-    // Update Progress Bar Line
     const progressBar = document.getElementById('opStepperLineActive');
     if (progressBar) {
         if (stepNumber === 1) progressBar.style.width = '0%';
@@ -155,7 +141,6 @@ function goToOperatorStep(stepNumber) {
         else if (stepNumber === 3) progressBar.style.width = '100%';
     }
 
-    // Update Circles
     for (let i = 1; i <= 3; i++) {
         const circle = document.getElementById('opStepCircle' + i);
         if (circle) {
@@ -172,7 +157,6 @@ function goToOperatorStep(stepNumber) {
     }
 }
 
-// OTP Input Auto-focus Logic
 document.addEventListener('DOMContentLoaded', () => {
     const otpInputs = document.querySelectorAll('.otp-input');
     otpInputs.forEach((input, index) => {
@@ -202,9 +186,8 @@ function completeOperatorSignup() {
     window.location.href = 'operator/dashboard-home.html';
 }
 
-// Global Logout Function
 function logout() {
     localStorage.clear();
-    // Redirect to index.html from any subdirectory
+
     window.location.href = '../index.html';
 }

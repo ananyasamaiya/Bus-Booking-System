@@ -1,4 +1,4 @@
-/* Operator Dashboard Specific Styles */
+
 :root {
     --deep-navy: #1E3A8A;
     --emerald-green: #10B981;
@@ -9,29 +9,35 @@
 
 body.dashboard-body {
     background-color: var(--light-grey);
+    background-image: none !important;
     font-family: 'Calibri', 'Inter', sans-serif;
     color: var(--charcoal-grey);
     margin: 0;
     padding: 0;
 }
 
-/* 12-Column Grid Layout */
 .dashboard-layout {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     min-height: 100vh;
 }
 
-/* Sidebar (2 columns) */
-.dashboard-sidebar {
+#sidebar-container {
     grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--deep-navy);
+    z-index: 10;
+}
+
+.dashboard-sidebar {
     background-color: var(--deep-navy);
     color: var(--white);
     padding: 20px 0;
     display: flex;
     flex-direction: column;
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    z-index: 10;
+    flex: 1;
 }
 
 .sidebar-logo {
@@ -76,7 +82,6 @@ body.dashboard-body {
     border-left: 4px solid var(--emerald-green);
 }
 
-/* Main Content (10 columns) */
 .dashboard-main {
     grid-column: span 10;
     display: flex;
@@ -85,7 +90,6 @@ body.dashboard-body {
     min-height: 100vh;
 }
 
-/* Topbar */
 .dashboard-topbar {
     height: 70px;
     background-color: var(--white);
@@ -118,7 +122,6 @@ body.dashboard-body {
     color: var(--deep-navy);
 }
 
-/* Profile Dropdown */
 .profile-wrapper {
     position: relative;
 }
@@ -172,14 +175,12 @@ body.dashboard-body {
     color: var(--deep-navy);
 }
 
-/* Main Content Area */
 .dashboard-content {
     padding: 40px;
     flex: 1;
     transition: opacity 0.3s ease;
 }
 
-/* Modal specific styles */
 .dashboard-disabled-overlay {
     position: absolute;
     top: 70px;
@@ -246,7 +247,6 @@ body.dashboard-body {
     line-height: 1.5;
 }
 
-/* Profile Settings Page */
 .profile-card {
     background: var(--white);
     border-radius: 16px;
@@ -368,7 +368,6 @@ body.dashboard-body {
     border-color: var(--deep-navy);
 }
 
-/* Route Management Styles */
 .route-card {
     border-left: 5px solid var(--emerald-green);
     transition: transform 0.2s, box-shadow 0.2s;
@@ -379,7 +378,6 @@ body.dashboard-body {
     box-shadow: 0 8px 25px rgba(0,0,0,0.08) !important;
 }
 
-/* Stop Configuration Timeline Styles */
 .timeline-container {
     position: relative;
 }
@@ -389,7 +387,7 @@ body.dashboard-body {
     position: absolute;
     top: 20px;
     bottom: 40px;
-    left: 27px; /* 16px (ps-3) + 11px (half of 22px node) */
+    left: 27px; 
     width: 3px;
     background-color: #cbd5e1;
     z-index: 1;
@@ -417,7 +415,7 @@ body.dashboard-body {
 }
 
 .dest-node {
-    border-color: #ef4444; /* red for destination */
+    border-color: #ef4444; 
 }
 
 .hover-shadow.transition {
@@ -427,7 +425,7 @@ body.dashboard-body {
 .hover-shadow.transition:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
-/* Extracted Utility Classes */
+
 .fs-20 { font-size: 20px !important; }
 .sidebar-brand-img { height: 30px; margin-right: 10px; border-radius: 6px; }
 .justify-content-end { justify-content: flex-end !important; }

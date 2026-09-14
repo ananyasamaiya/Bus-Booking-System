@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Management - GoBus Operator</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/operator-dashboard.css">
+    <link rel="stylesheet" href="../css/booking-management.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+
+        <div id="sidebar-container"></div>
+
+        <div class="dashboard-main">
+
+            <header class="dashboard-topbar justify-content-end">
+                <div class="topbar-links d-none d-md-flex align-items-center">
+                    <a href="dashboard-home.html">Home</a>
+                    <a href="company-profile.html">Profile/Settings</a>
+                    <a href="#" id="logoutBtn" class="logout-btn">Logout</a>
+                </div>
+            </header>
+
+            <main class="dashboard-content" id="dashboardContent">
+
+                <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+                    <div>
+                        <h4 class="text-deep-navy-bold mb-1">Booking Management</h4>
+                        <p class="text-muted mb-0">View and manage all passenger bookings.</p>
+                    </div>
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="input-group" style="width: 250px;">
+                            <span class="input-group-text bg-white border-end-0"><i class="fas fa-search text-muted"></i></span>
+                            <input type="text" class="form-control border-start-0" id="bookingSearch" placeholder="Search ID, Name, Bus...">
+                        </div>
+                        <input type="date" class="form-control" style="width: 160px;" id="bookingDateFilter">
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3 shadow-sm border p-0 overflow-hidden">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0 custom-booking-table" id="bookingTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Booking ID</th>
+                                    <th>Traveler</th>
+                                    <th>Route & Trip</th>
+                                    <th>Seats</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th class="text-end">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td><span class="fw-bold text-deep-navy">#GB-8829</span></td>
+                                    <td>
+                                        <div class="fw-bold">John Doe</div>
+                                        <small class="text-muted">+1 555-0198</small>
+                                    </td>
+                                    <td>
+                                        <div class="fw-bold">New York &rarr; Washington</div>
+                                        <small class="text-muted">Oct 12, 22:00 | <span class="text-deep-navy fw-semibold">MH-01-1234</span></small>
+                                    </td>
+                                    <td>
+                                        <div class="fw-bold">2</div>
+                                        <small class="text-muted">L12, L13</small>
+                                    </td>
+                                    <td>
+                                        <div class="fw-bold">$90.00</div>
+                                        <span class="badge bg-success bg-opacity-10 text-success border border-success">Paid</span>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success">Confirmed</span></td>
+                                    <td class="text-end">
+                                        <button class="btn btn-sm btn-outline-primary view-manifest-btn" data-trip="MH-01-1234_Oct12" data-bs-toggle="modal" data-bs-target="#manifestModal">
+                                            <i class="fas fa-users me-1"></i> View Passenger List
+                                        </button>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><span class="fw-bold text-deep-navy">#GB-8830</span></td>
+                                    <td>
+                                        <div class="fw-bold">Sarah Jenkins</div>
+                                        <small class="text-muted">+1 555-0321</small>
+                                    </td>
+                                    <td>
+                                        <div class="fw-bold">Boston &rarr; New York</div>
+                                        <small class="text-muted">Oct 12, 14:00 | <span class="text-deep-navy fw-semibold">DL-10-9876</span></small>
+                                    </td>
+                                    <td>
+                                        <div class="fw-bold">1</div>
+                                        <small class="text-muted">U04</small>
+                                    </td>
+                                    <td>
+                                        <div class="fw-bold">$35.00</div>
+                                        <span class="badge bg-success bg-opacity-10 text-success border border-success">Paid</span>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success">Confirmed</span></td>
+                                    <td class="text-end">
+                                        <button class="btn btn-sm btn-outline-primary view-manifest-btn" data-trip="DL-10-9876_Oct12" data-bs-toggle="modal" data-bs-target="#manifestModal">
+                                            <i class="fas fa-users me-1"></i> View Passenger List
+                                        </button>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><span class="fw-bold text-deep-navy">#GB-8831</span></td>
+                                    <td>
+                                        <div class="fw-bold">Michael Smith</div>
+                                        <small class="text-muted">+1 555-0777</small>
+                                    </td>
+                                    <td>
+                                        <div class="fw-bold">New York &rarr; Washington</div>
+                                        <small class="text-muted">Oct 12, 22:00 | <span class="text-deep-navy fw-semibold">MH-01-1234</span></small>
+                                    </td>
+                                    <td>
+                                        <div class="fw-bold">1</div>
+                                        <small class="text-muted">L14</small>
+                                    </td>
+                                    <td>
+                                        <div class="fw-bold">$45.00</div>
+                                        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger">Refunded</span>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-danger">Cancelled</span></td>
+                                    <td class="text-end">
+                                        <button class="btn btn-sm btn-outline-primary view-manifest-btn" data-trip="MH-01-1234_Oct12" data-bs-toggle="modal" data-bs-target="#manifestModal">
+                                            <i class="fas fa-users me-1"></i> View Passenger List
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="modal fade" id="manifestModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-deep-navy text-white border-bottom-0">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-clipboard-list me-2"></i>Passenger Manifest</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="bg-light p-3 border-bottom d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="mb-1 fw-bold text-deep-navy" id="manifestRoute">New York &rarr; Washington</h6>
+                            <small class="text-muted" id="manifestDetails">Oct 12, 22:00 | Bus: MH-01-1234</small>
+                        </div>
+                        <div class="text-end">
+                            <h6 class="mb-1 fw-bold">Total Pax: <span id="manifestTotalPax" class="text-primary">3</span></h6>
+                        </div>
+                    </div>
+                    <div class="table-responsive" style="max-height: 400px;">
+                        <table class="table table-striped table-hover mb-0" id="manifestTable">
+                            <thead class="table-light sticky-top">
+                                <tr>
+                                    <th>Seat No.</th>
+                                    <th>Passenger Name</th>
+                                    <th>Age/Gender</th>
+                                    <th>Boarding Point</th>
+                                    <th>Dropping Point</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer border-top-0 bg-light">
+                    <button type="button" class="btn btn-light border px-4" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary px-4" style="background-color: var(--deep-navy); border-color: var(--deep-navy);" id="printManifestBtn">
+                        <i class="fas fa-print me-1"></i> Print Manifest
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/booking-management.js"></script>
+    <script src="js/sidebar-loader.js"></script>
+</body>
+</html>

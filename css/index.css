@@ -1,4 +1,4 @@
-/* Hero Section */
+
 .hero-section {
     margin-top: 74px;
     height: 650px;
@@ -69,5 +69,5 @@
         margin-top: 15px;
     }
 }
-/* Extracted Utility Classes */
+
 .brand-logo-img { height: 40px; margin-right: 10px; border-radius: 8px; }

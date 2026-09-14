@@ -1,4 +1,4 @@
-/* Sign Up Page Styles */
+
 .signup-body {
     background-color: #fafbfc;
     background-image: none;
@@ -63,7 +63,6 @@
     color: white;
 }
 
-/* Modal Stepper Styles */
 .step-circle {
     width: 24px;
     height: 24px;
@@ -95,7 +94,6 @@
     font-size: 10px;
 }
 
-/* OTP Input Styles */
 .otp-container {
     gap: 8px;
 }
@@ -130,7 +128,7 @@
 .signup-input-group:focus-within .input-group-text {
     border-color: #0d3eb8;
 }
-/* Extracted Utility Classes */
+
 .brand-logo-img { height: 40px; margin-right: 10px; border-radius: 8px; }
 .text-navy { color: #112240 !important; }
 .text-primary-blue { color: #0d3eb8 !important; }

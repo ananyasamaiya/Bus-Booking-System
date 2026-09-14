@@ -1,0 +1,220 @@
+/* Seat Selection Styles */
+
+:root {
+    --primary-blue: #1a43bf;
+    --bg-gray: #f4f7f6;
+    --seat-available: #ffffff;
+    --seat-selected: #1a43bf;
+    --seat-occupied: #e5e7eb;
+    --seat-ladies: #ec4899;
+    --border-color: #cbd5e1;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+}
+
+body.passenger-body {
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
+}
+
+/* Trip Summary Bar */
+.trip-summary-bar {
+    background-color: white;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Bus Map Container */
+.bus-map-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 30px;
+    position: relative;
+    overflow-x: auto;
+}
+
+.steering-wheel {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 24px;
+    color: #94a3b8;
+}
+
+.deck-toggle .btn {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+.deck-toggle .btn.active {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* The Seat Grid */
+.bus-interior {
+    border: 2px solid #e2e8f0;
+    border-radius: 40px 10px 10px 40px;
+    padding: 40px 30px;
+    min-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.seat-grid {
+    display: grid;
+    gap: 15px;
+    /* We'll handle grid-template columns in JS or inline based on config */
+}
+
+/* Seat Base Styles */
+.seat {
+    border: 2px solid var(--border-color);
+    background-color: var(--seat-available);
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-light);
+    transition: all 0.2s ease;
+}
+
+/* Chair vs Sleeper Dimensions */
+.seat.chair {
+    width: 45px;
+    height: 45px;
+}
+.seat.sleeper {
+    width: 90px;
+    height: 45px;
+    border-radius: 4px;
+}
+
+.seat.sleeper::after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    width: 15px;
+    background-color: #f1f5f9;
+    border-radius: 2px;
+}
+
+/* Seat States */
+.seat:hover:not(.occupied) {
+    border-color: var(--primary-blue);
+    transform: scale(1.05);
+}
+
+.seat.selected {
+    background-color: var(--seat-selected);
+    border-color: var(--seat-selected);
+    color: white;
+}
+
+.seat.selected.sleeper::after {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.seat.occupied {
+    background-color: var(--seat-occupied);
+    border-color: var(--seat-occupied);
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.seat.occupied::before {
+    content: '\f00d'; /* FontAwesome times */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    font-size: 20px;
+    color: #cbd5e1;
+    opacity: 0.5;
+}
+
+.seat.ladies {
+    background-color: #fce7f3;
+    border-color: var(--seat-ladies);
+    color: var(--seat-ladies);
+}
+
+.seat.ladies.occupied {
+    background-color: var(--seat-ladies);
+    color: white;
+}
+.seat.ladies.occupied::before {
+    color: white;
+}
+
+/* Aisle Space */
+.aisle {
+    grid-column: span 1; /* Represents the walking path */
+}
+
+/* Legend */
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+.legend-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid var(--border-color);
+}
+.legend-box.available { background: var(--seat-available); }
+.legend-box.selected { background: var(--seat-selected); border-color: var(--seat-selected); }
+.legend-box.occupied { background: var(--seat-occupied); border-color: var(--seat-occupied); }
+.legend-box.ladies { background: var(--seat-ladies); border-color: var(--seat-ladies); }
+
+/* Sticky Booking Summary */
+.booking-summary-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 24px;
+    position: sticky;
+    top: 20px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    color: var(--text-light);
+}
+.price-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed #e2e8f0;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.btn-checkout {
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: 600;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+.btn-checkout:hover {
+    background-color: #15379e;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(26, 67, 191, 0.3);
+}

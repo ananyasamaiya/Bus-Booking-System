@@ -1,4 +1,4 @@
-/* Passenger Dashboard CSS */
+
 :root {
     --bg-light: #F3F4F6;
     --royal-blue: #1E40AF;
@@ -15,7 +15,6 @@ body.passenger-body {
     color: var(--charcoal-text);
 }
 
-/* Navbar */
 .passenger-navbar {
     background-color: var(--white);
     border-bottom: 1px solid var(--border-color);
@@ -58,7 +57,6 @@ body.passenger-body {
     color: #ef4444;
 }
 
-/* Dashboard Sections */
 .section-title {
     font-size: 20px;
     font-weight: 700;
@@ -66,7 +64,6 @@ body.passenger-body {
     color: var(--charcoal-text);
 }
 
-/* Trip Card */
 .trip-card {
     background: var(--white);
     border-radius: 12px;
@@ -159,7 +156,6 @@ body.passenger-body {
     color: var(--white);
 }
 
-/* History Card */
 .history-card {
     opacity: 0.8;
 }
@@ -178,14 +174,13 @@ body.passenger-body {
     border-radius: 20px;
 }
 
-/* Empty State */
 .empty-state {
     text-align: center;
     padding: 60px 20px;
     background: var(--white);
     border-radius: 12px;
     border: 1px dashed #cbd5e1;
-    display: none; /* hidden by default */
+    display: none; 
 }
 
 .empty-state-icon {
@@ -205,7 +200,6 @@ body.passenger-body {
     margin-bottom: 30px;
 }
 
-/* Profile Settings */
 .profile-container {
     max-width: 700px;
     margin: 40px auto;
@@ -275,7 +269,6 @@ body.passenger-body {
     box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
 }
 
-/* Gender Selection */
 .gender-selector {
     display: flex;
     gap: 16px;
@@ -317,13 +310,12 @@ body.passenger-body {
     color: var(--royal-blue);
 }
 
-/* Divider */
 .profile-divider {
     height: 1px;
     background-color: #e5e7eb;
     margin: 40px 0;
 }
-/* Extracted Utility Classes */
+
 .brand-logo-img { height: 40px; margin-right: 10px; border-radius: 8px; }
 .modal-profile-setup { max-width: 500px; }
 .text-navy { color: #112240 !important; }

@@ -1,4 +1,4 @@
-/* Login Page Styles */
+
 .login-body {
     background-color: #f4f7fe;
     background-image: linear-gradient(180deg, #ffffff 0%, #edf2fa 100%);
@@ -70,7 +70,7 @@
     background-color: #f8fafc;
     border-color: #cbd5e1;
 }
-/* Extracted Utility Classes */
+
 .brand-logo-img { height: 40px; margin-right: 10px; border-radius: 8px; }
 .form-label-custom { font-size: 14px; color: #112240; }
 .cursor-pointer { cursor: pointer; }
