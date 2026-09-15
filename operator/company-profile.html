@@ -11,7 +11,8 @@
     
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/operator-dashboard.css">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    </head>
 <body class="dashboard-body">
 
     <div class="dashboard-layout">
@@ -92,21 +93,16 @@
     </div>
 
     <script>
-// Dropdown Logic
         function toggleDropdown() {
             const menu = document.getElementById('profileMenu');
             menu.classList.toggle('show');
         }
-
-        // Close dropdown when clicking outside
         window.addEventListener('click', function(e) {
             const wrapper = document.querySelector('.profile-wrapper');
             if (wrapper && !wrapper.contains(e.target)) {
                 document.getElementById('profileMenu').classList.remove('show');
             }
         });
-
-        // Mock Logout
         document.getElementById('logoutBtn').addEventListener('click', () => {
             localStorage.clear();
             window.location.href = '../index.html';

@@ -11,7 +11,8 @@
     
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/operator-dashboard.css">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    </head>
 <body class="dashboard-body">
 
     <div class="dashboard-layout">
@@ -62,13 +63,12 @@
     </div>
 
     <script>
-// Dropdown Logic
+
         function toggleDropdown() {
             const menu = document.getElementById('profileMenu');
             menu.classList.toggle('show');
         }
 
-        // Close dropdown when clicking outside
         window.addEventListener('click', function(e) {
             const wrapper = document.querySelector('.profile-wrapper');
             if (wrapper && !wrapper.contains(e.target)) {
@@ -76,30 +76,18 @@
             }
         });
 
-        // Show Modal on load (Simulating the state)
         document.addEventListener("DOMContentLoaded", () => {
             const overlay = document.getElementById('dashboardOverlay');
-            // By default we can show it immediately
             overlay.style.display = 'flex';
         });
-
-        // Modal Logic
         function closeModal() {
-            // Hide the modal itself
             document.getElementById('docModal').style.display = 'none';
-            // But keep the overlay blocking the dashboard with a greyed out effect
-            // We just need to make the content greyed out and overlay empty but blocking
             document.getElementById('dashboardContent').classList.add('greyed-out');
             
-            // Optionally, we can show a small badge instead, but the prompt says 
-            // "dashboard behind it should be slightly greyed out or disabled"
             const overlay = document.getElementById('dashboardOverlay');
             overlay.style.background = 'transparent'; 
             overlay.style.backdropFilter = 'none';
-            // The greyed-out class on dashboardContent handles the opacity and pointer-events
         }
-
-        // Mock Logout
         document.getElementById('logoutBtn').addEventListener('click', () => {
             localStorage.clear();
             window.location.href = '../index.html';

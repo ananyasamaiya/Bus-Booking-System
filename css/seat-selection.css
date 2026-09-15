@@ -1,4 +1,4 @@
-/* Seat Selection Styles */
+
 
 :root {
     --primary-blue: #1a43bf;
@@ -17,14 +17,14 @@ body.passenger-body {
     color: var(--text-dark);
 }
 
-/* Trip Summary Bar */
+
 .trip-summary-bar {
     background-color: white;
     border-bottom: 1px solid #e2e8f0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-/* Bus Map Container */
+
 .bus-map-card {
     background: white;
     border-radius: 12px;
@@ -51,7 +51,7 @@ body.passenger-body {
     color: white;
 }
 
-/* The Seat Grid */
+
 .bus-interior {
     border: 2px solid #e2e8f0;
     border-radius: 40px 10px 10px 40px;
@@ -64,10 +64,10 @@ body.passenger-body {
 .seat-grid {
     display: grid;
     gap: 15px;
-    /* We'll handle grid-template columns in JS or inline based on config */
+    
 }
 
-/* Seat Base Styles */
+
 .seat {
     border: 2px solid var(--border-color);
     background-color: var(--seat-available);
@@ -83,7 +83,7 @@ body.passenger-body {
     transition: all 0.2s ease;
 }
 
-/* Chair vs Sleeper Dimensions */
+
 .seat.chair {
     width: 45px;
     height: 45px;
@@ -105,7 +105,7 @@ body.passenger-body {
     border-radius: 2px;
 }
 
-/* Seat States */
+
 .seat:hover:not(.occupied) {
     border-color: var(--primary-blue);
     transform: scale(1.05);
@@ -129,7 +129,7 @@ body.passenger-body {
 }
 
 .seat.occupied::before {
-    content: '\f00d'; /* FontAwesome times */
+    content: '\f00d'; 
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
@@ -138,26 +138,14 @@ body.passenger-body {
     opacity: 0.5;
 }
 
-.seat.ladies {
-    background-color: #fce7f3;
-    border-color: var(--seat-ladies);
-    color: var(--seat-ladies);
-}
 
-.seat.ladies.occupied {
-    background-color: var(--seat-ladies);
-    color: white;
-}
-.seat.ladies.occupied::before {
-    color: white;
-}
 
-/* Aisle Space */
+
 .aisle {
-    grid-column: span 1; /* Represents the walking path */
+    grid-column: span 1; 
 }
 
-/* Legend */
+
 .legend-item {
     display: flex;
     align-items: center;
@@ -174,9 +162,8 @@ body.passenger-body {
 .legend-box.available { background: var(--seat-available); }
 .legend-box.selected { background: var(--seat-selected); border-color: var(--seat-selected); }
 .legend-box.occupied { background: var(--seat-occupied); border-color: var(--seat-occupied); }
-.legend-box.ladies { background: var(--seat-ladies); border-color: var(--seat-ladies); }
 
-/* Sticky Booking Summary */
+
 .booking-summary-card {
     background: white;
     border-radius: 12px;

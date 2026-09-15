@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - GoBus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/passenger-dashboard.css">
+    <link rel="stylesheet" href="../css/checkout-flow.css">
+</head>
+<body class="passenger-body">
+    <div id="navbar-container"></div>
+
+    <main class="container py-5" style="margin-top: 60px;">
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <div class="stepper-wrapper">
+                    <div class="stepper-item completed">
+                        <div class="step-counter"><i class="fa-solid fa-check"></i></div>
+                        <div class="step-name">Select Seats</div>
+                    </div>
+                    <div class="stepper-item active">
+                        <div class="step-counter">2</div>
+                        <div class="step-name">Passenger Details</div>
+                    </div>
+                    <div class="stepper-item">
+                        <div class="step-counter">3</div>
+                        <div class="step-name">Payment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <h4 class="fw-bold mb-4" style="color: #112240;">Passenger Details</h4>
+                <div id="passengerFormsContainer">
+                    
+                </div>
+
+                <div class="card border-0 shadow-sm rounded-4 p-4 mt-4">
+                    <h5 class="fw-bold mb-3">Contact Information</h5>
+                    <p class="text-secondary small mb-4">Your ticket will be sent to these details.</p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-semibold text-secondary">Email Address</label>
+                            <input type="email" class="form-control bg-light border-0" id="contactEmail" placeholder="e.g. name@example.com" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-semibold text-secondary">Phone Number</label>
+                            <input type="tel" class="form-control bg-light border-0" id="contactPhone" placeholder="e.g. +1 234 567 8900" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 p-4 fare-sidebar">
+                    <h5 class="fw-bold mb-4 border-bottom pb-3">Fare Breakdown</h5>
+                    
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-secondary">Journey</span>
+                        <span class="fw-semibold">Mumbai &rarr; Delhi</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-secondary">Seats</span>
+                        <span class="fw-semibold" id="sidebarSeats">-</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="text-secondary">Base Fare (<span id="sidebarCount">0</span>x)</span>
+                        <span class="fw-semibold" id="sidebarBase">₹0</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3 border-bottom pb-3">
+                        <span class="text-secondary">Taxes & Fees</span>
+                        <span class="fw-semibold" id="sidebarTax">₹0</span>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="fw-bold fs-5 text-dark">Total Amount</span>
+                        <span class="fw-bold fs-5 text-primary" id="sidebarTotal">₹0</span>
+                    </div>
+
+                    <button class="btn btn-primary w-100 py-3 fw-bold fs-6" style="background-color: #1a43bf; border: none; border-radius: 8px;" onclick="proceedToPay()">
+                        Proceed to Pay
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/navbar-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let storedSeats = localStorage.getItem('selectedSeats');
+            let seats = storedSeats ? JSON.parse(storedSeats) : ['14U', '15U'];
+            const container = document.getElementById('passengerFormsContainer');
+            
+            const baseFare = 1500;
+            const tax = 150 * seats.length;
+            const total = (baseFare * seats.length) + tax;
+            
+            document.getElementById('sidebarSeats').textContent = seats.join(', ');
+            document.getElementById('sidebarCount').textContent = seats.length;
+            document.getElementById('sidebarBase').textContent = `₹${baseFare * seats.length}`;
+            document.getElementById('sidebarTax').textContent = `₹${tax}`;
+            document.getElementById('sidebarTotal').textContent = `₹${total}`;
+
+            seats.forEach((seat, index) => {
+                const formHTML = `
+                <div class="card border-0 shadow-sm rounded-4 p-4 mb-3 passenger-form-block">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="fw-bold m-0 text-primary">Passenger ${index + 1}</h6>
+                        <span class="badge bg-light text-dark border">Seat: ${seat}</span>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-7">
+                            <label class="form-label small fw-semibold text-secondary">Full Name</label>
+                            <input type="text" class="form-control bg-light border-0 pass-name" placeholder="Enter full name" required>
+                        </div>
+                        <div class="col-md-5">
+                            <label class="form-label small fw-semibold text-secondary">Age</label>
+                            <input type="number" class="form-control bg-light border-0 pass-age" placeholder="Age" min="1" max="120" required>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label class="form-label small fw-semibold text-secondary mb-2">Gender</label>
+                            <div class="gender-radio-group" role="group">
+                                <input type="radio" class="btn-check pass-gender" name="gender${index}" id="male${index}" value="Male" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary px-4 py-2 me-2" for="male${index}">Male</label>
+
+                                <input type="radio" class="btn-check pass-gender" name="gender${index}" id="female${index}" value="Female" autocomplete="off">
+                                <label class="btn btn-outline-primary px-4 py-2 me-2" for="female${index}">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+                container.innerHTML += formHTML;
+            });
+        });
+
+        function proceedToPay() {
+            const email = document.getElementById('contactEmail').value || 'passenger@example.com';
+            localStorage.setItem('contactEmail', email);
+            window.location.href = 'payment-status.html';
+        }
+    </script>
+</body>
+</html>
